@@ -1,0 +1,228 @@
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .hero-banner-equipo {
+        padding: 100px 0;
+        min-height: 50vh;
+    }
+    
+    .hero-title-equipo {
+        font-size: 3rem;
+    }
+    
+    .hero-text-equipo {
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile (480px - 767px) */
+@media (max-width: 767px) {
+    .hero-banner-equipo {
+        padding: 80px 0;
+        min-height: 40vh;
+        margin-top: 70px;
+    }
+    
+    .hero-container-equipo {
+        padding: 0 1.5rem;
+    }
+    
+    .hero-title-equipo {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-text-equipo {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/*  Mobile (0 - 479px) */
+@media (max-width: 479px) {
+    .hero-banner-equipo {
+        padding: 60px 0;
+        min-height: 35vh;
+    }
+    
+    .hero-container-equipo {
+        padding: 0 1rem;
+    }
+    
+    .hero-title-equipo {
+        font-size: 2rem;
+    }
+    
+    .hero-text-equipo {
+        font-size: 1rem;
+    }
+}
+
+/* ¿Por qué trabajar con nosotros? */
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .porque-trabajar {
+        padding: 60px 0;
+    }
+    
+    .beneficios-grid {
+        gap: 1.5rem;
+    }
+    
+    .beneficio-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile (480px - 767px) */
+@media (max-width: 767px) {
+    .porque-trabajar {
+        padding: 50px 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-description {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+        padding: 0 1rem;
+    }
+    
+    .beneficios-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .beneficio-item {
+        padding: 0 0.5rem;
+    }
+    
+    .beneficio-icon img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .beneficio-title {
+        font-size: 1.1rem;
+    }
+    
+    .beneficio-text {
+        font-size: 0.95rem;
+    }
+}
+
+/* Small Mobile (0 - 479px) */
+@media (max-width: 479px) {
+    .porque-trabajar {
+        padding: 40px 0;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .beneficios-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .beneficio-item {
+        padding: 0;
+    }
+}
+
+/* Vacantes*/
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .vacantes-section {
+        padding: 60px 0;
+    }
+    
+    .categorias-filtro {
+        gap: 0.8rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .filtro-btn {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile (480px - 767px) */
+@media (max-width: 767px) {
+    .vacantes-section {
+        padding: 50px 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-description {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+        padding: 0 1rem;
+    }
+    
+    .categorias-filtro {
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+    
+    .filtro-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+    
+    .placeholder-text {
+        font-size: 1.3rem;
+    }
+}
+
+/* Small Mobile (0 - 479px) */
+@media (max-width: 479px) {
+    .vacantes-section {
+        padding: 40px 0;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .categorias-filtro {
+        gap: 0.4rem;
+    }
+    
+    .filtro-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .placeholder-text {
+        font-size: 1.1rem;
+    }
+}

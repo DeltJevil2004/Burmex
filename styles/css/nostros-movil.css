@@ -1,0 +1,558 @@
+/*   HERO BANNER NOSOTROS  */
+
+@media (max-width: 1440px) {
+    .hero-banner-nosotros {
+        padding: 100px auto;
+        margin-top: 100px;
+        background-size: cover; /* Cambiar a cover para mejor adaptación */
+    }
+    
+    .hero-container-nosotros {
+        padding: 0 1.5rem;
+    }
+    
+    .hero-content-nosotros {
+        max-width: 100%;
+    }
+    
+    .hero-title-nosotros {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-text-nosotros {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .hero-banner-nosotros {
+        padding: 100px auto;
+        margin-top: 100px;
+        background-size: cover; /* Cambiar a cover para mejor adaptación */
+    }
+    
+    .hero-container-nosotros {
+        padding: 0 1.5rem;
+    }
+    
+    .hero-content-nosotros {
+        max-width: 100%;
+    }
+    
+    .hero-title-nosotros {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-text-nosotros {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+    }
+}
+
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+    .hero-banner-nosotros {
+        padding: 40px 0;
+        margin-top: 70px;
+        background-size: cover; /* Cambiar a cover para mejor adaptación */
+    }
+    
+    .hero-container-nosotros {
+        padding: 0 1.5rem;
+    }
+    
+    .hero-content-nosotros {
+        max-width: 90%;
+    }
+    
+    .hero-title-nosotros {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-text-nosotros {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+    }
+}
+
+/* Móvil - 425px */
+@media (max-width: 425px) {
+    .hero-banner-nosotros {
+        height: 300px; /* Altura aún menor para móvil */
+        padding: 30px 0;
+        margin-top: 60px;
+        background-size: cover; /* Mantener cover */
+    }
+    
+    .hero-container-nosotros {
+        padding: 0 1rem;
+    }
+    
+    .hero-content-nosotros {
+        max-width: 100%;
+    }
+    
+    .hero-title-nosotros {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.1;
+    }
+    
+    .hero-text-nosotros {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+    }
+}
+
+/* Móvil pequeño - 320px */
+@media (max-width: 320px) {
+    .hero-banner-nosotros {
+        height: 250px;
+        padding: 20px 0;
+    }
+    
+    .hero-title-nosotros {
+        font-size: 1.6rem;
+    }
+    
+    .hero-text-nosotros {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* mision y vision */
+@media (max-width: 768px) {
+    .mision-vision {
+        padding: 60px 0;
+    }
+    
+    .mv-grid {
+        grid-template-columns: 1fr;
+        gap: 60px; /* Menos separación en móvil pero aún suficiente */
+    }
+    
+    .mv-item {
+        padding: 0;
+        text-align: center; /* Centrado en móvil para mejor apariencia */
+    }
+    
+    .mv-icon {
+        justify-content: center; /* Icono centrado en móvil */
+    }
+    
+    .mv-title {
+        font-size: 1.8rem;
+        text-align: center; /* Título centrado en móvil */
+    }
+    
+    .mv-text {
+        font-size: 1rem;
+        text-align: center; /* Texto centrado en móvil */
+    }
+    
+    .mv-icon img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mision-vision {
+        padding: 40px 0;
+    }
+    
+    .mv-grid {
+        gap: 50px;
+    }
+    
+    .mv-title {
+        font-size: 1.6rem;
+    }
+    
+    .mv-text {
+        font-size: 0.95rem;
+    }
+    
+    .mv-icon img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+/*   Nuestros Logros*/
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+    .logros-numeros {
+        padding: 60px 0;
+    }
+    
+    .logros-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .logros-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 20px;
+    }
+    
+    .logro-item {
+        padding: 0 10px;
+    }
+    
+    .logro-icon {
+        height: 70px;
+        margin-bottom: 1rem;
+    }
+    
+    .logro-icon img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .logro-number {
+        font-size: 2rem;
+    }
+    
+    .logro-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Móvil - 425px */
+@media (max-width: 425px) {
+    .logros-numeros {
+        padding: 40px 0;
+    }
+    
+    .logros-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .logros-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 15px;
+    }
+    
+    .logro-item {
+        padding: 0 5px;
+    }
+    
+    .logro-icon {
+        height: 60px;
+        margin-bottom: 0.8rem;
+    }
+    
+    .logro-icon img {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .logro-number {
+        font-size: 1.8rem;
+    }
+    
+    .logro-text {
+        font-size: 0.85rem;
+    }
+}
+
+/* Móvil pequeño - 320px */
+@media (max-width: 320px) {
+    .logros-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .logros-title {
+        font-size: 1.6rem;
+    }
+    
+    .logro-number {
+        font-size: 1.6rem;
+    }
+}
+
+/*   LÍNEA DE TIEMPO  */
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+    .timeline-year {
+        /* Aquí puedes modificar el estilo del año */
+        font-size: 1.2rem; /* Ejemplo: cambiar tamaño */
+        color: #3498db; /* Ejemplo: cambiar color */
+        font-weight: bold; /* Ejemplo: cambiar grosor */
+    }
+    
+    .timeline-title {
+        /* Aquí puedes modificar el estilo del título */
+        font-size: 1.3rem; /* Ejemplo: cambiar tamaño */
+        color: #2c3e50; /* Ejemplo: cambiar color */
+        font-weight: 600; /* Ejemplo: cambiar grosor */
+    }
+    
+    .timeline-description {
+        /* Aquí puedes modificar el estilo de la descripción */
+        font-size: 1rem; /* Ejemplo: cambiar tamaño */
+        color: #555; /* Ejemplo: cambiar color */
+        line-height: 1.5; /* Ejemplo: cambiar interlineado */
+    }
+}
+
+/* Móvil - 425px */
+@media (max-width: 425px) {
+    .timeline-year {
+        /* Aquí puedes modificar el estilo del año para móvil */
+        font-size: 1.1rem;
+        color: #3498db;
+        font-weight: bold;
+    }
+    
+    .timeline-title {
+        /* Aquí puedes modificar el estilo del título para móvil */
+        font-size: 0.9rem;
+        color: #2c3e50;
+        font-weight: 600;
+    }
+    
+    .timeline-description {
+        /* Aquí puedes modificar el estilo de la descripción para móvil */
+        font-size: 0.9rem;
+        color: #555;
+        line-height: 1.4;
+    }
+}
+
+
+/*  VALORES  */
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+    .valores-section {
+        padding: 60px 0;
+    }
+    
+    .valores-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .valores-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 30px;
+    }
+    
+    .valor-item {
+        padding: 0 15px;
+    }
+    
+    .valor-icon {
+        height: 70px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .valor-icon img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .valor-item-title {
+        font-size: 1.2rem;
+        min-height: 2.8em;
+        margin-bottom: 1rem;
+    }
+    
+    .valor-text {
+        font-size: 0.95rem;
+        min-height: 6.5em;
+    }
+}
+
+/* Móvil - 425px */
+@media (max-width: 425px) {
+    .valores-section {
+        padding: 40px 0;
+    }
+    
+    .valores-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .valores-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    
+    .valor-item {
+        padding: 0 20px;
+    }
+    
+    .valor-icon {
+        height: 65px;
+        margin-bottom: 1.2rem;
+    }
+    
+    .valor-icon img {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .valor-item-title {
+        font-size: 1.1rem;
+        min-height: auto;
+        margin-bottom: 0.8rem;
+    }
+    
+    .valor-text {
+        font-size: 0.9rem;
+        min-height: auto;
+        line-height: 1.5;
+    }
+}
+
+
+/*   RESPONSIVE EQUIPO DIRECTIVO   */
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+    .equipo-section {
+        padding: 60px 0;
+    }
+    
+    .equipo-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .equipo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 30px;
+    }
+    
+    .miembro-item {
+        padding: 0 10px;
+    }
+    
+    .miembro-imagen img {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .miembro-nombre {
+        font-size: 1.2rem;
+    }
+    
+    .miembro-puesto {
+        font-size: 1rem;
+    }
+    
+    .miembro-descripcion {
+        font-size: 0.9rem;
+    }
+}
+
+/* Móvil - 425px */
+@media (max-width: 425px) {
+    .equipo-section {
+        padding: 40px 0;
+    }
+    
+    .equipo-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .equipo-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    
+    .miembro-item {
+        padding: 0 20px;
+    }
+    
+    .miembro-imagen img {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .miembro-nombre {
+        font-size: 1.1rem;
+    }
+    
+    .miembro-puesto {
+        font-size: 0.95rem;
+    }
+    
+    .miembro-descripcion {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* Boton carreras */
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+    .careers-section {
+        padding: 50px 0;
+        margin-bottom: 50px;
+    }
+    
+    .careers-title {
+        font-size: 1.8rem;
+    }
+    
+    .careers-text {
+        font-size: 1rem;
+    }
+    
+    .careers-btn {
+        padding: 10px 25px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Móvil - 425px */
+@media (max-width: 425px) {
+    .careers-section {
+        padding: 40px 0;
+        margin-bottom: 40px;
+        border-radius: 8px;
+    }
+    
+    .careers-content {
+        padding: 0 15px;
+    }
+    
+    .careers-title {
+        font-size: 1.6rem;
+    }
+    
+    .careers-text {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .careers-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 250px;
+    }
+}

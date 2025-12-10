@@ -1,0 +1,674 @@
+
+
+/*  NavBar  */
+@media (max-width: 1024px) {
+    html, body {
+        width: 100% !important;
+        overflow-x: hidden !important;
+        position: relative;
+    }
+    
+    /* Override de contenedores principales */
+    .categories-container {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 0.8rem !important;
+    }
+    
+    .nav-container,
+    .hero-container {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 0.8rem !important;
+    }
+    
+    .categories-grid {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    .category-card {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .nav-right{
+        margin-right: 100px;
+    }
+}
+
+@media (max-width: 425px) {
+    html, body {
+        width: 100% !important;
+        overflow-x: hidden !important;
+        position: relative;
+    }
+    
+    /* Override de contenedores principales */
+    .categories-container {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 0.8rem !important;
+    }
+    
+    .nav-container,
+    .hero-container {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 0.8rem !important;
+    }
+    
+    .categories-grid {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    .category-card {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+
+
+/* Responsive Hero banner*/
+@media (max-width: 768px) {
+    .hero-banner {
+        padding: 80px 0;
+        min-height: 50vh;
+        text-align: center;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-text {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 425px) {
+    .hero-banner {
+        padding: 60px 0;
+        margin-top: 70px;
+        min-height: 40vh;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
+
+/* Responsive Categorías */
+@media (max-width: 768px) {
+    .categories-section {
+        padding: 60px 0;
+    }
+    
+    .categories-title {
+        font-size: 2rem;
+    }
+    
+    .categories-description {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+    
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .categories-section {
+        padding: 40px 0;
+    }
+    
+    .categories-title {
+        font-size: 1.6rem;
+    }
+    
+    .categories-description {
+        font-size: 0.95rem;
+    }
+    
+    .categories-container {
+        padding: 0 0.8rem;
+    }
+    
+    /* Grid de categorías ultra compacto */
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        padding: 0;
+    }
+    
+    .category-card {
+        min-height: 280px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .card-image {
+        height: 140px;
+    }
+    
+    .card-content {
+        padding: 1rem;
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        padding-left: 0;
+    }
+    
+    .card-description {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        padding-left: 0;
+    }
+    
+    .card-models {
+        font-size: 0.95rem;
+        padding-left: 0;
+    }
+    
+    .card-arrow {
+        font-size: 1.5rem;
+        padding-right: 0;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 320px) {
+    .categories-grid {
+        gap: 0.8rem;
+    }
+    
+    .category-card {
+        min-height: 260px;
+    }
+    
+    .card-image {
+        height: 130px;
+    }
+    
+    .card-content {
+        padding: 0.8rem;
+    }
+    
+    .card-title {
+        font-size: 1.1rem;
+    }
+    
+    .card-description {
+        font-size: 0.85rem;
+    }
+    
+    .card-models {
+        font-size: 0.9rem;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .hero-text {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* productos destacados */
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-section {
+        padding: 60px 0;
+    }
+    
+    .featured-title {
+        font-size: 2rem;
+    }
+    
+    .featured-description {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .featured-section {
+        padding: 50px 0;
+    }
+    
+    .featured-title {
+        font-size: 1.8rem;
+    }
+    
+    .featured-description {
+        font-size: 1rem;
+    }
+    
+    .product-content {
+        padding: 1.2rem;
+    }
+    
+    .product-name {
+        font-size: 1.2rem;
+    }
+    
+    .current-price {
+        font-size: 1.3rem;
+    }
+    
+    .product-actions {
+        flex-direction: column;
+    }
+    
+    .add-cart-btn {
+        width: 100%;
+    }
+}
+/* boton de ver todos los productos */
+@media (max-width: 768px) {
+    .view-all-container {
+        margin-top: 2.5rem;
+    }
+    
+    .view-all-btn {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .view-all-container {
+        margin-top: 2rem;
+    }
+    
+    .view-all-btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+}
+
+
+/* Nuestro Servicios */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-section {
+        padding: 60px 0;
+    }
+    
+    .services-title {
+        font-size: 2rem;
+    }
+    
+    .services-description {
+        font-size: 1.1rem;
+    }
+    
+    .service-icon {
+        width: 45px;
+        height: 45px;
+        top: 0.8rem;
+        left: 0.8rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .services-section {
+        padding: 50px 0;
+    }
+    
+    .services-title {
+        font-size: 1.8rem;
+    }
+    
+    .services-description {
+        font-size: 1rem;
+    }
+    
+    .service-card {
+        padding: 1.2rem;
+    }
+    
+    .service-icon {
+        width: 40px;
+        height: 40px;
+        top: 0.7rem;
+        left: 0.7rem;
+    }
+    
+    .service-name {
+        font-size: 1.3rem;
+    }
+    
+    .service-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+ /*   RESPONSIVE - SECCIÓN LÍDERES EN TECNOLOGÍA   */
+
+ @media (max-width: 1024px) {
+    .about-content {
+        gap: 3rem;
+    }
+    
+    .about-title {
+        font-size: 2.2rem;
+    }
+    
+    .stats-grid {
+        gap: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .about-image img {
+        margin-top: -10rem; 
+    }
+}
+
+ @media (max-width: 768px) {
+    .about-section {
+        padding: 60px 0;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+    
+    .about-text {
+        text-align: center;
+    }
+    
+    .about-title {
+        font-size: 2rem;
+    }
+    
+    .about-description {
+        font-size: 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .about-btn {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .about-image img {
+        margin-top: 0;  
+        max-width: 400px;
+    }
+}
+
+ @media (max-width: 425px) {
+    .about-section {
+        padding: 50px 0;
+    }
+    
+    .about-container {
+        padding: 0 1rem;
+    }
+    
+    .about-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .about-description {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        margin: 1.5rem 0;
+    }
+    
+    .stat-number {
+        font-size: 1.6rem;
+    }
+    
+    .stat-text {
+        font-size: 0.9rem;
+    }
+    
+    .about-btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .about-image img {
+        max-width: 100%;
+    }
+}
+
+ @media (max-width: 320px) {
+    .about-title {
+        font-size: 1.6rem;
+    }
+    
+    .about-description {
+        font-size: 0.9rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .about-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ¿Por qué elegirnos? */
+@media (max-width: 1024px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-choose-section {
+        padding: 60px 0;
+    }
+    
+    .why-choose-title {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .benefit-card {
+        padding: 1rem;
+    }
+    
+    .benefit-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1.2rem;
+    }
+    
+    .benefit-title {
+        font-size: 1.2rem;
+    }
+    
+    .benefit-text {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .why-choose-section {
+        padding: 50px 0;
+    }
+    
+    .why-choose-container {
+        padding: 0 1rem;
+    }
+    
+    .why-choose-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .benefit-card {
+        padding: 1.2rem;
+    }
+    
+    .benefit-icon {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 1rem;
+    }
+    
+    .benefit-title {
+        font-size: 1.1rem;
+    }
+    
+    .benefit-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Contactanos */
+@media (max-width: 1024px) {
+    .contact-content {
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 60px 0;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .contact-title {
+        font-size: 2rem;
+    }
+    
+    .contact-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .contact-form {
+        padding: 1.5rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .contact-section {
+        padding: 50px 0;
+    }
+    
+    .contact-container {
+        padding: 0 1rem;
+    }
+    
+    .contact-title {
+        font-size: 1.8rem;
+    }
+    
+    .contact-subtitle {
+        font-size: 1rem;
+    }
+    
+    .contact-form {
+        padding: 1.2rem;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}

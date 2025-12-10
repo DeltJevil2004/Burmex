@@ -1,0 +1,237 @@
+/* ===== HERO BANNER SERVICIOS ===== */
+.hero-banner-servicios {
+    background: #111827;
+    color: white;
+    padding: 100px 0;
+    margin-top: 50px;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-container-servicios {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content-servicios {
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hero-title-servicios {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: black;
+}
+
+.hero-text-servicios {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    opacity: 0.95;
+    text-shadow: black;
+}
+
+/* ===== SECCIÓN SERVICIOS ===== */
+.servicios-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.servicio-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    
+}
+
+.servicio-imagen {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.servicio-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.servicio-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 25px 25px 0 25px;
+}
+
+.servicio-icon {
+    flex-shrink: 0;
+}
+
+.servicio-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.servicio-titulos {
+    flex: 1;
+}
+
+.servicio-nombre {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.servicio-categoria {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3498db;
+    margin: 0;
+}
+
+.servicio-descripcion {
+    padding: 20px 25px 0 25px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.servicio-lista {
+    padding: 20px 25px;
+    margin: 0;
+    list-style: none; 
+}
+
+.servicio-lista li {
+    padding: 8px 0;
+    color: #555;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.check-icon {
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.servicio-botones {
+    display: flex;
+    gap: 12px;
+    padding: 0 25px 25px 25px;
+}
+
+.btn-ver-mas {
+    background: white;
+    color: #3498db;
+    border: 2px solid #3498db;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.btn-ver-mas:hover {
+    background: #3498db;
+    color: white;
+}
+
+.btn-solicitar {
+    background: #2563EB;
+    color: white;
+    border: 2px solid #2563EB;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.btn-solicitar:hover {
+    background: #2563EB;
+    border-color: #2563EB;
+}
+
+/*   SECCIÓN CONSULTA GRATUITA   */
+.consulta-section {
+    background: #2563EB;
+    padding: 80px 0;
+    color: white;
+    text-align: center;
+}
+
+.consulta-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.consulta-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.consulta-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.consulta-btn {
+    background: white;
+    color: #3498db;
+    border: 2px solid white;
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.consulta-btn:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}

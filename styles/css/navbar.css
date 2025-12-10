@@ -1,0 +1,896 @@
+/* ===== RESET Y CONFIGURACIONES GENERALES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* ===== NAVBAR PRINCIPAL ===== */
+.navbar {
+    /* Fondo blanco del navbar */
+    background-color: #ffffff;
+    /* Sombra suave para dar profundidad y separación */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    /* Fijo en la parte superior de la pantalla */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* Asegura que el navbar esté por encima de otros elementos */
+    z-index: 1000;
+    /* Padding vertical para altura del navbar */
+    padding: 1rem 0;
+}
+
+/* Contenedor principal del navbar */
+.nav-container {
+    /* Usa flexbox para alinear horizontalmente los elementos */
+    display: flex;
+    /* Distribuye el espacio: logo izquierda, menú centro, elementos derecha */
+    justify-content: space-between;
+    /* Centra verticalmente todos los elementos */
+    align-items: center;
+    /* Ancho máximo para pantallas grandes */
+    max-width: 1400px;
+    /* Centra el contenedor horizontalmente */
+    margin: 0 auto;
+    /* Padding horizontal interno */
+    padding: 0 2rem;
+
+    position: relative;
+}
+
+/* ===== LOGO ===== */
+.nav-logo {
+    /* Contenedor del logo */
+    margin-left: -200px; /* Lo mueve más a la izquierda */
+}
+
+.nav-logo img {
+    /* Altura fija para el logo */
+    height: 100px;
+    /* Mantiene la proporción original del logo */
+    width: auto;
+    /* Transición suave para efectos hover */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover en el logo - escala ligeramente al pasar el mouse */
+.nav-logo img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== MENÚ DE NAVEGACIÓN ===== */
+.nav-menu {
+    /* Flexbox para alinear los elementos del menú en fila */
+    display: flex;
+    /* Elimina los estilos por defecto de la lista */
+    list-style: none;
+    /* Espacio uniforme entre los elementos del menú */
+    gap: 2.5rem;
+
+    
+    flex: 1;
+    justify-content: center;
+    
+
+    
+}
+
+/* Elementos individuales del menú */
+.nav-item {
+    /* Posición relativa para poder posicionar el subrayado */
+    position: relative;
+}
+
+/* Enlaces del menú de navegación */
+.nav-link {
+    text-decoration: none;
+    /* Color de texto oscuro para buen contraste */
+    color: #2c3e50;
+    /* Peso de fuente semi-negrita */
+    font-weight: 600;
+    /* Transición suave para efectos de color */
+    transition: color 0.3s ease;
+    /* Padding para área de clic más grande */
+    padding: 0.5rem 0;
+    /* Tamaño de fuente legible */
+    font-size: 1rem;
+    /* Transforma a mayúsculas para estilo más formal */
+    text-transform: uppercase;
+    /* Espaciado entre letras para mejor legibilidad */
+    letter-spacing: 0.5px;
+}
+
+/* Efecto hover - cambia color al pasar el mouse */
+
+
+/* Línea decorativa bajo los enlaces */
+.nav-link::after {
+    content: '';
+    /* Posiciona la línea justo debajo del texto */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* Ancho inicial cero (invisible) */
+    width: 0;
+    /* Altura de la línea decorativa */
+    height: 2px;
+    /* Color que combina con el hover */
+    background-color: #3498db;
+    /* Transición suave del ancho */
+    transition: width 0.3s ease;
+}
+
+/* Efecto hover en la línea - se expande al pasar el mouse */
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ===== ELEMENTOS DEL LADO DERECHO ===== */
+.nav-right {
+    /* Flexbox para alinear iconos y botón horizontalmente */
+    display: flex;
+    /* Centra verticalmente todos los elementos */
+    align-items: center;
+    /* Espacio consistente entre los elementos */
+    gap: 1.5rem;
+    /* MOVER LIGERAMENTE HACIA LA IZQUIERDA SIN AFECTAR EL NAV MENU */
+    position: relative;   /* mantiene su caja en el flujo */
+    margin-left: auto;    
+    transform: translateX(200px);  /* <- ajustar valor (px) según necesites */
+    transition: transform 0.2s ease;
+    z-index: 1000;    
+}
+
+/* Contenedor base para iconos (lupa y carrito) */
+.nav-icon {
+    /* Posición relativa para elementos posicionados absolutamente dentro */
+    position: relative;
+    /* Cursor de pointer para indicar interactividad */
+    cursor: pointer;
+    /* Transición suave para efectos */
+    transition: transform 0.2s ease;
+}
+
+/* Efecto hover en contenedores de iconos */
+.nav-icon:hover {
+    /* Eleva ligeramente el icono */
+    transform: translateY(-2px);
+}
+
+/* Estilos para imágenes de iconos */
+.nav-icon img {
+    /* Tamaño consistente para todos los iconos */
+    width: 22px;
+    height: 22px;
+    /* Transición suave para efectos hover */
+    transition: opacity 0.3s ease;
+}
+
+/* Efecto hover en imágenes de iconos */
+.nav-icon:hover img {
+    /* Ligera reducción de opacidad al pasar el mouse */
+    opacity: 0.8;
+}
+
+/* ===== BUSCADOR - ACTUALIZADO CON FUNCIONALIDAD JS ===== */
+.search-container {
+    /* Posición relativa para el dropdown del buscador */
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    overflow: visible;
+}
+
+/* Asegura que la lupa sea visible inicialmente y esté por encima */
+.search-icon {
+    display: block;
+    transition: opacity 0.3s ease;
+    position: relative;
+    z-index: 1002; /* Mayor z-index que el search-box */
+}
+
+/* Efecto hover en la lupa */
+.search-icon:hover {
+    opacity: 0.7;
+}
+
+/* Caja del buscador (dropdown) - CORREGIDO PARA NO BLOQUEAR LA LUPA */
+.search-box {
+    /* Posiciona la caja en el mismo lugar que la lupa */
+    position: absolute;
+    top: 10px;
+    right: 0;
+    /* Transforma para centrar verticalmente y posicionar correctamente */
+    transform: translateY(-50%) translateX(-10px);
+    /* Fondo blanco para buen contraste */
+    background: #ffffff;
+    /* Sombra pronunciada para destacar del fondo */
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    /* Bordes redondeados modernos */
+    border-radius: 10px;
+    /* Padding interno generoso */
+    padding: 1.2rem;
+    /* Oculto por defecto */
+    display: none;
+    /* Ancho fijo para consistencia */
+    width: 400px;
+    /* Flexbox para layout interno */
+    display: flex;
+    gap: 0.8rem;
+    /* Borde sutil */
+    border: 1px solid #e9ecef;
+    /* Asegura que esté por encima de otros elementos pero debajo de la lupa */
+    z-index: 1001;
+    opacity: 0;
+    transition: all 0.3s ease;
+    /* Asegura que no bloquee clics en elementos detrás cuando está oculto */
+    pointer-events: none;
+}
+
+/* Estado activo del buscador - se muestra con animación */
+.search-box.active {
+    display: flex;
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+    /* Permite interacción cuando está activo */
+    pointer-events: auto;
+}
+/* Campo de entrada de texto del buscador */
+.search-input {
+    /* Ocupa todo el espacio disponible */
+    flex: 1;
+    /* Borde sutil */
+    border: 1px solid #dee2e6;
+    /* Bordes redondeados */
+    border-radius: 6px;
+    /* Padding interno cómodo */
+    padding: 0.7rem 1rem;
+    /* Elimina outline por defecto */
+    outline: none;
+    /* Transición suave para efectos focus */
+    transition: all 0.3s ease;
+    /* Color de texto */
+    color: #495057;
+    /* Tamaño de fuente legible */
+    font-size: 0.95rem;
+}
+
+/* Efecto focus en el campo de búsqueda */
+.search-input:focus {
+    /* Cambia color del borde al enfocar */
+    border-color: #2563EB;
+    /* Sombra sutil al enfocar */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Botón de búsqueda */
+.search-btn {
+    /* Color de fondo principal */
+    background-color: #2563EB;
+    /* Texto blanco para contraste */
+    color: white;
+    /* Sin borde */
+    border: none;
+    /* Bordes redondeados */
+    border-radius: 6px;
+    /* Padding interno balanceado */
+    padding: 0.7rem 1.2rem;
+    /* Cursor pointer para indicar clickeable */
+    cursor: pointer;
+    /* Transición suave para efectos */
+    transition: all 0.3s ease;
+    /* Peso de fuente */
+    font-weight: 600;
+    /* Tamaño de fuente */
+    font-size: 0.95rem;
+}
+
+/* Efecto hover en el botón de búsqueda */
+.search-btn:hover {
+    /* Color más oscuro al pasar el mouse */
+    background-color: #2980b9;
+    /* Elevación sutil */
+    transform: translateY(-1px);
+    /* Sombra más pronunciada */
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+}
+
+/* ===== CARRITO ===== */
+.cart-container {
+    /* Posición relativa para el contador */
+    position: relative;
+}
+
+/* Contador de items en el carrito */
+.cart-count {
+    /* Posiciona en esquina superior derecha del icono */
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    /* Color de fondo rojo para destacar */
+    background-color: #e74c3c;
+    /* Texto blanco para contraste */
+    color: white;
+    /* Círculo perfecto */
+    border-radius: 50%;
+    /* Tamaño fijo */
+    width: 18px;
+    height: 18px;
+    /* Centra el número horizontal y verticalmente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Tamaño de fuente pequeño */
+    font-size: 0.75rem;
+    /* Peso de fuente negrita */
+    font-weight: bold;
+    /* Transición para efectos */
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover en el contador del carrito */
+.cart-container:hover .cart-count {
+    /* Aumenta ligeramente el tamaño */
+    transform: scale(1.1);
+    /* Color más oscuro */
+    background-color: #c0392b;
+}
+
+/* ===== BOTÓN COTIZAR ===== */
+.cta-button {
+    /* Color de fondo llamativo */
+    background-color: #2563EB;
+    /* Texto blanco para máximo contraste */
+    color: white;
+    /* Sin borde */
+    border: none;
+    /* Bordes redondeados */
+    border-radius: 8px;
+    /* Padding interno generoso */
+    padding: 0.8rem 1.8rem;
+    /* Cursor pointer */
+    cursor: pointer;
+    /* Transición suave para todos los efectos */
+    transition: all 0.3s ease;
+    /* Peso de fuente negrita */
+    font-weight: 700;
+    /* Transforma a mayúsculas */
+    text-transform: uppercase;
+    /* Tamaño de fuente */
+    font-size: 0.9rem;
+}
+
+/* Efecto hover en el botón Cotizar */
+.cta-button:hover {
+    /* Color más oscuro al pasar el mouse */
+    background-color: #2563EB;
+    /* Eleva el botón */
+    transform: translateY(-2px);
+    /* Sombra más pronunciada */
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+}
+
+/* Efecto active (cuando se hace clic) */
+.cta-button:active {
+    /* Vuelve a la posición original */
+    transform: translateY(0);
+    /* Reduce la sombra */
+    box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3);
+}
+
+
+ 
+
+/*RESPONSIVE - MÓVIL 320px a 425px  */
+.logo-mobile {
+    display: none !important;
+}
+@media (max-width: 425px) {
+    /* Navbar principal */
+    .navbar {
+        padding: 0.5rem 0;
+    }
+
+    
+    /* Contenedor principal */
+    .nav-container {
+        padding: 0 1rem;
+        position: relative;
+        justify-content: space-between;
+    }
+    .logo-desktop {
+        display: none !important;
+    }
+    
+    .logo-mobile {
+        display: block !important;
+        height: 50px;
+        width: auto;
+    }
+    /* Logo */
+    .nav-logo {
+        margin-left: 0;
+        flex: 1;
+    }
+
+    .nav-logo img {
+        height: 60px;
+    }
+
+    
+
+    /* Botón hamburguesa */
+    .hamburger {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        z-index: 1003;
+        padding: 5px;
+        background: transparent;
+        border: none;
+        order: 2;
+    }
+
+    .hamburger-icon {
+        width: 32px;
+        height: 32px;
+     }
+
+ 
+
+    /* Menú de navegación */
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1002;
+        gap: 1.5rem;
+        height: auto;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Elementos móviles dentro del menú hamburguesa - CORREGIDO */
+    .nav-mobile-items {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+        margin-top: 1rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #e9ecef;
+    }
+
+    /* Ocultar elementos desktop en móvil */
+    .nav-right {
+        display: none !important;
+    }
+
+    /* Mostrar elementos móviles - CORREGIDO */
+    .mobile-search,
+    .mobile-cart,
+    .mobile-cta {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Buscador en móvil */
+    .search-container.mobile-search {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .search-box.mobile-search-box {
+        position: static;
+        width: 100%;
+        transform: none;
+        margin: 0;
+        display: none;
+        padding: 1rem;
+    }
+
+    .search-box.mobile-search-box.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    /* Carrito en móvil */
+    .cart-container.mobile-cart {
+        display: flex !important;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .cart-container.mobile-cart .cart-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* Botón Cotizar en móvil */
+    .cta-button.mobile-cta {
+        display: flex !important;
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+        background-color: #2563EB;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.8rem 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        margin: 0 auto;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+    }
+
+    .cta-button.mobile-cta:hover {
+        background-color: #1d4ed8;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    }
+
+    /* Elementos individuales del menú */
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.8rem 0;
+        font-size: 1.1rem;
+    }
+
+    /* Estilos para la lupa en móvil */
+    .nav-icon.mobile-search {
+        position: relative;
+    }
+
+    .search-icon.mobile-search {
+        cursor: pointer;
+    }
+}
+
+/* Estilos específicos para pantallas muy pequeñas */
+@media (max-width: 320px) {
+    .nav-container {
+        padding: 0 0.5rem;
+    }
+
+    .nav-logo img {
+        height: 50px;
+    }
+
+    .nav-menu {
+        top: 60px;
+        padding: 1.5rem 0.5rem;
+    }
+
+    .search-box.mobile-search-box {
+        padding: 0.8rem;
+    }
+
+    .search-input {
+        font-size: 16px;
+    }
+
+    .cta-button.mobile-cta {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Ocultar hamburguesa en desktop */
+.hamburger {
+    display: none;
+}
+
+/* Ocultar elementos móviles en desktop */
+.nav-mobile-items,
+.mobile-search,
+.mobile-cart,
+.mobile-cta {
+    display: none;
+}
+
+
+/* ===== ESTILOS RESPONSIVE - TABLET 768px ===== */
+@media (max-width: 768px) {
+    /* Navbar principal */
+    .navbar {
+        padding: 0.7rem 0;
+    }
+
+    /* Contenedor principal */
+    .nav-container {
+        padding: 0 1.5rem;
+        justify-content: space-between;
+    }
+
+    /* Logo - más pequeño */
+    .nav-logo {
+        margin-left: 0;
+        flex: 1;
+    }
+
+    .nav-logo img {
+        height: 70px;
+    }
+
+    /* Mostrar hamburguesa en tablet */
+    .hamburger {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+        z-index: 1003;
+        padding: 5px;
+        background: transparent;
+        border: none;
+        order: 2;
+    }
+
+    .hamburger-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Menú de navegación - oculto por defecto (hamburguesa) */
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1002;
+        gap: 1.5rem;
+        height: auto;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Elementos móviles dentro del menú hamburguesa */
+    .nav-mobile-items {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+        margin-top: 1rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #e9ecef;
+    }
+
+    /* Ocultar elementos desktop en tablet */
+    .nav-right {
+        display: none !important;
+    }
+
+    /* Mostrar elementos móviles en tablet */
+    .mobile-search,
+    .mobile-cart,
+    .mobile-cta {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Buscador en tablet */
+    .search-container.mobile-search {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .search-box.mobile-search-box {
+        position: static;
+        width: 100%;
+        transform: none;
+        margin: 0;
+        display: none;
+        padding: 1rem;
+    }
+
+    .search-box.mobile-search-box.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    /* Carrito en tablet */
+    .cart-container.mobile-cart {
+        display: flex !important;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .cart-container.mobile-cart .cart-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* Botón Cotizar en tablet */
+    .cta-button.mobile-cta {
+        display: flex !important;
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+        background-color: #2563EB;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.8rem 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        margin: 0 auto;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+    }
+
+    .cta-button.mobile-cta:hover {
+        background-color: #1d4ed8;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    }
+
+    /* Elementos individuales del menú */
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.8rem 0;
+        font-size: 1.1rem;
+    }
+}
+
+/* ===== ESTILOS RESPONSIVE - MÓVIL 425px ===== */
+@media (max-width: 425px) {
+    /* Tus estilos móviles existentes aquí */
+    /* (Se mantienen igual pero ahora para pantallas más pequeñas) */
+}
+
+/* ===== ESTILOS RESPONSIVE - LAPTOP 1440px ===== */
+@media (max-width: 1440px) {
+    /* Contenedor principal */
+    .nav-container {
+        max-width: 1200px;
+        padding: 0 1.5rem;
+    }
+
+    /* Logo - mover un poco a la derecha */
+    .nav-logo {
+        margin-left: -100px; /* Reducido de -200px a -100px */
+    }
+
+    /* Elementos del lado derecho - mover un poco a la izquierda */
+    .nav-right {
+        transform: translateX(100px); /* Reducido de 200px a 100px */
+        gap: 1.2rem; /* Un poco más compacto */
+    }
+
+    /* Menú de navegación - ajustar espaciado */
+    .nav-menu {
+        gap: 2rem; /* Reducido de 2.5rem a 2rem */
+    }
+
+    /* Logo un poco más pequeño */
+    .nav-logo img {
+        height: 90px; /* Reducido de 100px a 90px */
+    }
+}
+
+/* ===== ESTILOS RESPONSIVE - LAPTOP 1024px ===== */
+@media (max-width: 1024px) {
+    /* Contenedor principal */
+    .nav-container {
+        max-width: 1000px;
+        padding: 0 1.5rem;
+    }
+
+    /* Logo y menú - agrupar con margen equilibrado */
+    .nav-logo {
+        margin-left: 0; /* Reset del margen negativo */
+        margin-right: 2rem; /* Espacio entre logo y menú */
+        flex: 0 0 auto;
+    }
+
+    .nav-menu {
+        gap: 1.5rem; /* Más compacto */
+        flex: 1;
+        justify-content: flex-start; /* Alinear a la izquierda */
+        margin-left: 0;
+    }
+
+    /* Logo más pequeño */
+    .nav-logo img {
+        height: 80px; /* Reducido de 100px a 80px */
+    }
+
+    /* Elementos del lado derecho - mover a la izquierda */
+    .nav-right {
+        transform: translateX(50px); /* Reducido significativamente */
+        gap: 1rem; /* Más compacto */
+        margin-left: auto;
+    }
+
+    /* Texto del menú un poco más pequeño */
+    .nav-link {
+        font-size: 0.95rem; /* Ligeramente más pequeño */
+        letter-spacing: 0.4px;
+    }
+
+    /* Botón Cotizar más compacto */
+    .cta-button {
+        padding: 0.7rem 1.5rem; /* Más compacto */
+        font-size: 0.85rem;
+    }
+
+    /* Buscador un poco más pequeño */
+    .search-box {
+        width: 350px; /* Reducido de 400px a 350px */
+    }
+}
+
+/* ===== ESTILOS RESPONSIVE - TABLET 768px ===== */
+@media (max-width: 768px) {
+    /* Tu media query existente para tablet aquí */
+}

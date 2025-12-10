@@ -1,0 +1,196 @@
+/*    HERO BANNER SERVICIOS   */
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+    .hero-banner-servicios {
+        padding: 80px 0;
+        min-height: 50vh;
+        margin-top: 70px;
+    }
+    
+    .hero-container-servicios {
+        padding: 0 1.5rem;
+    }
+    
+    .hero-title-servicios {
+        font-size: 2.5rem;
+    }
+    
+    .hero-text-servicios {
+        font-size: 1.1rem;
+    }
+}
+
+/* Móvil - 425px */
+@media (max-width: 425px) {
+    .hero-banner-servicios {
+        padding: 60px 0;
+        min-height: 40vh;
+    }
+    
+    .hero-container-servicios {
+        padding: 0 1rem;
+    }
+    
+    .hero-title-servicios {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-text-servicios {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+
+/*   RESPONSIVE SERVICIOS   */
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+    .servicios-section {
+        padding: 60px 0;
+    }
+    
+    .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .servicio-header {
+        padding: 20px 20px 0 20px;
+    }
+    
+    .servicio-descripcion {
+        padding: 15px 20px 0 20px;
+    }
+    
+    .servicio-lista {
+        padding: 15px 20px;
+    }
+    
+    .servicio-botones {
+        padding: 0 20px 20px 20px;
+    }
+    
+    .servicio-nombre {
+        font-size: 1.2rem;
+    }
+    
+    .servicio-categoria {
+        font-size: 0.95rem;
+    }
+    
+    .servicio-lista li {
+        padding: 6px 0;
+        font-size: 0.85rem;
+    }
+}
+
+/* Móvil - 425px */
+@media (max-width: 425px) {
+    .servicios-section {
+        padding: 40px 0;
+    }
+    
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .servicio-header {
+        padding: 15px 15px 0 15px;
+        gap: 12px;
+    }
+    
+    .servicio-icon img {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .servicio-descripcion {
+        padding: 12px 15px 0 15px;
+        font-size: 0.9rem;
+    }
+    
+    .servicio-lista {
+        padding: 12px 15px;
+    }
+    
+    .servicio-lista li {
+        font-size: 0.85rem;
+        padding: 5px 0;
+    }
+    
+    .check-icon {
+        font-size: 0.9rem;
+    }
+    
+    .servicio-botones {
+        padding: 0 15px 15px 15px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn-ver-mas,
+    .btn-solicitar {
+        padding: 12px 20px;
+    }
+}
+
+
+/*   RESPONSIVE CONSULTA GRATUITA   */
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+    .consulta-section {
+        padding: 60px 0;
+    }
+    
+    .consulta-title {
+        font-size: 2rem;
+    }
+    
+    .consulta-text {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .consulta-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}
+
+/* Móvil - 425px */
+@media (max-width: 425px) {
+    .consulta-section {
+        padding: 50px 0;
+    }
+    
+    .consulta-content {
+        padding: 0 15px;
+    }
+    
+    .consulta-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .consulta-text {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+    }
+    
+    .consulta-btn {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 280px;
+    }
+}
