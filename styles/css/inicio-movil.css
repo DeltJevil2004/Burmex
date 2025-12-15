@@ -1,6 +1,6 @@
+/* === VERSIÓN MÓVIL INICIO === */
 
-
-/*  NavBar  */
+/* Ajustes generales responsivos */
 @media (max-width: 1024px) {
     html, body {
         width: 100% !important;
@@ -8,138 +8,99 @@
         position: relative;
     }
     
-    /* Override de contenedores principales */
-    .categories-container {
+    /* Contenedores principales */
+    .contenedor-categorias {
         max-width: 100% !important;
         width: 100% !important;
         padding: 0 0.8rem !important;
     }
     
-    .nav-container,
-    .hero-container {
+    .contenedor-banner {
         max-width: 100% !important;
         width: 100% !important;
         padding: 0 0.8rem !important;
     }
     
-    .categories-grid {
+    .cuadricula-categorias {
         max-width: 100% !important;
         width: 100% !important;
     }
     
-    .category-card {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    .nav-right{
-        margin-right: 100px;
-    }
-}
-
-@media (max-width: 425px) {
-    html, body {
-        width: 100% !important;
-        overflow-x: hidden !important;
-        position: relative;
-    }
-    
-    /* Override de contenedores principales */
-    .categories-container {
-        max-width: 100% !important;
-        width: 100% !important;
-        padding: 0 0.8rem !important;
-    }
-    
-    .nav-container,
-    .hero-container {
-        max-width: 100% !important;
-        width: 100% !important;
-        padding: 0 0.8rem !important;
-    }
-    
-    .categories-grid {
-        max-width: 100% !important;
-        width: 100% !important;
-    }
-    
-    .category-card {
+    .tarjeta-categoria {
         width: 100% !important;
         max-width: 100% !important;
     }
 }
 
-
-
-/* Responsive Hero banner*/
+/* Banner principal móvil */
 @media (max-width: 768px) {
-    .hero-banner {
+    .banner-principal {
         padding: 80px 0;
         min-height: 50vh;
         text-align: center;
     }
     
-    .hero-content {
+    .contenido-banner {
         max-width: 100%;
         text-align: center;
     }
     
-    .hero-title {
+    .titulo-banner {
         font-size: 2.5rem;
     }
     
-    .hero-text {
+    .texto-banner {
         font-size: 1.1rem;
     }
     
-    .hero-buttons {
+    .botones-banner {
         justify-content: center;
     }
 }
 
 @media (max-width: 425px) {
-    .hero-banner {
+    .banner-principal {
         padding: 60px 0;
         margin-top: 70px;
         min-height: 40vh;
     }
     
-    .hero-title {
+    .titulo-banner {
         font-size: 1.8rem;
     }
     
-    .hero-text {
+    .texto-banner {
         font-size: 1rem;
     }
     
-    .btn {
+    .boton {
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
         width: 100%;
     }
     
-    .hero-buttons {
+    .botones-banner {
         flex-direction: column;
         gap: 0.8rem;
     }
 }
 
-/* Responsive Categorías */
+/* Categorías móvil */
 @media (max-width: 768px) {
-    .categories-section {
+    .seccion-categorias {
         padding: 60px 0;
     }
     
-    .categories-title {
+    .titulo-categorias {
         font-size: 2rem;
     }
     
-    .categories-description {
+    .descripcion-categorias {
         font-size: 1.1rem;
         padding: 0 1rem;
     }
     
-    .categories-grid {
+    .cuadricula-categorias {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         max-width: 100%;
@@ -147,185 +108,142 @@
 }
 
 @media (max-width: 425px) {
-    .categories-section {
+    .seccion-categorias {
         padding: 40px 0;
     }
     
-    .categories-title {
+    .titulo-categorias {
         font-size: 1.6rem;
     }
     
-    .categories-description {
+    .descripcion-categorias {
         font-size: 0.95rem;
     }
     
-    .categories-container {
+    .contenedor-categorias {
         padding: 0 0.8rem;
     }
     
-    /* Grid de categorías ultra compacto */
-    .categories-grid {
+    /* Categorías en una columna */
+    .cuadricula-categorias {
         grid-template-columns: 1fr;
         gap: 1rem;
         margin-top: 1.5rem;
         padding: 0;
     }
     
-    .category-card {
+    .tarjeta-categoria {
         min-height: 280px;
         width: 100%;
         margin: 0 auto;
     }
     
-    .card-image {
+    .imagen-categoria {
         height: 140px;
     }
     
-    .card-content {
-        padding: 1rem;
-    }
-    
-    .card-title {
+    .titulo-tarjeta {
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
         padding-left: 0;
     }
     
-    .card-description {
+    .descripcion-tarjeta {
         font-size: 0.9rem;
         margin-bottom: 1rem;
         padding-left: 0;
     }
     
-    .card-models {
+    .modelos-tarjeta {
         font-size: 0.95rem;
         padding-left: 0;
     }
     
-    .card-arrow {
+    .flecha-tarjeta {
         font-size: 1.5rem;
         padding-right: 0;
     }
 }
 
-/* Para pantallas muy pequeñas */
-@media (max-width: 320px) {
-    .categories-grid {
-        gap: 0.8rem;
-    }
-    
-    .category-card {
-        min-height: 260px;
-    }
-    
-    .card-image {
-        height: 130px;
-    }
-    
-    .card-content {
-        padding: 0.8rem;
-    }
-    
-    .card-title {
-        font-size: 1.1rem;
-    }
-    
-    .card-description {
-        font-size: 0.85rem;
-    }
-    
-    .card-models {
-        font-size: 0.9rem;
-    }
-    
-    .hero-title {
-        font-size: 1.6rem;
-    }
-    
-    .hero-text {
-        font-size: 0.9rem;
-    }
-}
-
-
-/* productos destacados */
+/* Productos destacados móvil */
 @media (max-width: 1024px) {
-    .products-grid {
+    .cuadricula-productos {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
-    .featured-section {
+    .seccion-destacados {
         padding: 60px 0;
     }
     
-    .featured-title {
+    .titulo-destacados {
         font-size: 2rem;
     }
     
-    .featured-description {
+    .descripcion-destacados {
         font-size: 1.1rem;
     }
 }
 
 @media (max-width: 425px) {
-    .products-grid {
+    .cuadricula-productos {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
     
-    .featured-section {
+    .seccion-destacados {
         padding: 50px 0;
     }
     
-    .featured-title {
+    .titulo-destacados {
         font-size: 1.8rem;
     }
     
-    .featured-description {
+    .descripcion-destacados {
         font-size: 1rem;
     }
     
-    .product-content {
+    .contenido-producto {
         padding: 1.2rem;
     }
     
-    .product-name {
+    .nombre-producto {
         font-size: 1.2rem;
     }
     
-    .current-price {
+    .precio-actual {
         font-size: 1.3rem;
     }
     
-    .product-actions {
+    .acciones-producto {
         flex-direction: column;
     }
     
-    .add-cart-btn {
+    .boton-carrito {
         width: 100%;
     }
 }
-/* boton de ver todos los productos */
+
+/* Botón ver todos móvil */
 @media (max-width: 768px) {
-    .view-all-container {
+    .contenedor-ver-todos {
         margin-top: 2.5rem;
     }
     
-    .view-all-btn {
+    .boton-ver-todos {
         padding: 0.9rem 2rem;
         font-size: 1rem;
     }
 }
 
 @media (max-width: 425px) {
-    .view-all-container {
+    .contenedor-ver-todos {
         margin-top: 2rem;
     }
     
-    .view-all-btn {
+    .boton-ver-todos {
         padding: 0.8rem 1.8rem;
         font-size: 0.95rem;
         width: 100%;
@@ -334,341 +252,302 @@
     }
 }
 
-
-/* Nuestro Servicios */
+/* Servicios móvil */
 @media (max-width: 1024px) {
-    .services-grid {
+    .cuadricula-servicios {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
-    .services-section {
+    .seccion-servicios {
         padding: 60px 0;
     }
     
-    .services-title {
+    .titulo-servicios {
         font-size: 2rem;
     }
     
-    .services-description {
+    .descripcion-servicios {
         font-size: 1.1rem;
-    }
-    
-    .service-icon {
-        width: 45px;
-        height: 45px;
-        top: 0.8rem;
-        left: 0.8rem;
     }
 }
 
 @media (max-width: 425px) {
-    .services-grid {
+    .cuadricula-servicios {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
     
-    .services-section {
+    .seccion-servicios {
         padding: 50px 0;
     }
     
-    .services-title {
+    .titulo-servicios {
         font-size: 1.8rem;
     }
     
-    .services-description {
+    .descripcion-servicios {
         font-size: 1rem;
     }
     
-    .service-card {
+    .tarjeta-servicio {
         padding: 1.2rem;
     }
     
-    .service-icon {
-        width: 40px;
-        height: 40px;
-        top: 0.7rem;
-        left: 0.7rem;
-    }
-    
-    .service-name {
+    .nombre-servicio {
         font-size: 1.3rem;
     }
     
-    .service-btn {
+    .boton-servicio {
         padding: 0.7rem 1.2rem;
         font-size: 0.9rem;
     }
 }
 
- /*   RESPONSIVE - SECCIÓN LÍDERES EN TECNOLOGÍA   */
-
- @media (max-width: 1024px) {
-    .about-content {
+/* Sección nosotros móvil */
+@media (max-width: 1024px) {
+    .contenido-nosotros {
         gap: 3rem;
     }
     
-    .about-title {
+    .titulo-nosotros {
         font-size: 2.2rem;
     }
     
-    .stats-grid {
+    .cuadricula-estadisticas {
         gap: 1.5rem;
     }
     
-    .stat-number {
+    .numero-estadistica {
         font-size: 2rem;
     }
     
-    .about-image img {
+    .imagen-nosotros img {
         margin-top: -10rem; 
     }
 }
 
- @media (max-width: 768px) {
-    .about-section {
+@media (max-width: 768px) {
+    .seccion-nosotros {
         padding: 60px 0;
     }
     
-    .about-content {
+    .contenido-nosotros {
         grid-template-columns: 1fr;
         gap: 2.5rem;
         text-align: center;
     }
     
-    .about-text {
+    .texto-nosotros {
         text-align: center;
     }
     
-    .about-title {
+    .titulo-nosotros {
         font-size: 2rem;
     }
     
-    .about-description {
+    .descripcion-nosotros {
         font-size: 1rem;
     }
     
-    .stats-grid {
+    .cuadricula-estadisticas {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         margin: 2rem 0;
     }
     
-    .stat-number {
+    .numero-estadistica {
         font-size: 1.8rem;
     }
     
-    .about-btn {
+    .boton-nosotros {
         padding: 0.9rem 2rem;
         font-size: 1rem;
     }
     
-    .about-image img {
-        margin-top: 0;  
+    .imagen-nosotros img {
+        margin-top: 0;
         max-width: 400px;
     }
 }
 
- @media (max-width: 425px) {
-    .about-section {
+@media (max-width: 425px) {
+    .seccion-nosotros {
         padding: 50px 0;
     }
     
-    .about-container {
+    .contenedor-nosotros {
         padding: 0 1rem;
     }
     
-    .about-title {
+    .titulo-nosotros {
         font-size: 1.8rem;
         margin-bottom: 1rem;
     }
     
-    .about-description {
+    .descripcion-nosotros {
         font-size: 0.95rem;
         margin-bottom: 1rem;
     }
     
-    .stats-grid {
+    .cuadricula-estadisticas {
         grid-template-columns: 1fr;
         gap: 1.2rem;
         margin: 1.5rem 0;
     }
     
-    .stat-number {
+    .numero-estadistica {
         font-size: 1.6rem;
     }
     
-    .stat-text {
-        font-size: 0.9rem;
-    }
-    
-    .about-btn {
+    .boton-nosotros {
         padding: 0.8rem 1.8rem;
         font-size: 0.95rem;
         width: 100%;
         max-width: 280px;
     }
     
-    .about-image img {
+    .imagen-nosotros img {
         max-width: 100%;
     }
 }
 
- @media (max-width: 320px) {
-    .about-title {
-        font-size: 1.6rem;
-    }
-    
-    .about-description {
-        font-size: 0.9rem;
-    }
-    
-    .stat-number {
-        font-size: 1.5rem;
-    }
-    
-    .about-btn {
-        padding: 0.7rem 1.5rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* ¿Por qué elegirnos? */
+/* Beneficios móvil */
 @media (max-width: 1024px) {
-    .benefits-grid {
+    .cuadricula-beneficios {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
 }
 
 @media (max-width: 768px) {
-    .why-choose-section {
+    .seccion-beneficios {
         padding: 60px 0;
     }
     
-    .why-choose-title {
+    .titulo-beneficios {
         font-size: 2rem;
         margin-bottom: 2.5rem;
     }
     
-    .benefit-card {
+    .tarjeta-beneficio {
         padding: 1rem;
     }
     
-    .benefit-icon {
+    .icono-beneficio {
         width: 60px;
         height: 60px;
         margin-bottom: 1.2rem;
     }
     
-    .benefit-title {
+    .titulo-beneficio {
         font-size: 1.2rem;
     }
     
-    .benefit-text {
+    .texto-beneficio {
         font-size: 0.95rem;
     }
 }
 
 @media (max-width: 425px) {
-    .why-choose-section {
+    .seccion-beneficios {
         padding: 50px 0;
     }
     
-    .why-choose-container {
+    .contenedor-beneficios {
         padding: 0 1rem;
     }
     
-    .why-choose-title {
+    .titulo-beneficios {
         font-size: 1.8rem;
         margin-bottom: 2rem;
     }
     
-    .benefits-grid {
+    .cuadricula-beneficios {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         max-width: 300px;
         margin: 0 auto;
     }
     
-    .benefit-card {
+    .tarjeta-beneficio {
         padding: 1.2rem;
     }
     
-    .benefit-icon {
+    .icono-beneficio {
         width: 55px;
         height: 55px;
         margin-bottom: 1rem;
     }
     
-    .benefit-title {
+    .titulo-beneficio {
         font-size: 1.1rem;
     }
     
-    .benefit-text {
+    .texto-beneficio {
         font-size: 0.9rem;
     }
 }
 
-/* Contactanos */
+/* Contacto móvil */
 @media (max-width: 1024px) {
-    .contact-content {
+    .contenido-contacto {
         gap: 3rem;
     }
 }
 
 @media (max-width: 768px) {
-    .contact-section {
+    .seccion-contacto {
         padding: 60px 0;
     }
     
-    .contact-content {
+    .contenido-contacto {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
     
-    .contact-title {
+    .titulo-contacto {
         font-size: 2rem;
     }
     
-    .contact-subtitle {
+    .subtitulo-contacto {
         font-size: 1.1rem;
     }
     
-    .contact-form {
+    .formulario-contacto {
         padding: 1.5rem;
     }
     
-    .form-row {
+    .fila-formulario {
         grid-template-columns: 1fr;
         gap: 1.2rem;
     }
 }
 
 @media (max-width: 425px) {
-    .contact-section {
+    .seccion-contacto {
         padding: 50px 0;
     }
     
-    .contact-container {
+    .contenedor-contacto {
         padding: 0 1rem;
     }
     
-    .contact-title {
+    .titulo-contacto {
         font-size: 1.8rem;
     }
     
-    .contact-subtitle {
+    .subtitulo-contacto {
         font-size: 1rem;
     }
     
-    .contact-form {
+    .formulario-contacto {
         padding: 1.2rem;
     }
     
-    .social-icons {
+    .iconos-redes {
         justify-content: center;
     }
 }

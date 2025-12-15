@@ -1,4 +1,4 @@
-/* styles/css/dashboard.css */
+/* === PANEL DE CONTROL - ESTILOS PRINCIPALES === */
 
 /* Reset y estilos base */
 * {
@@ -16,7 +16,7 @@ body {
     flex-direction: column;
 }
 
-/*   NAVBAR SUPERIOR   */
+/* NAVEGACIÓN SUPERIOR */
 .navbar {
     background-color: white;
     border-bottom: 1px solid #e5e7eb;
@@ -39,7 +39,7 @@ body {
     gap: 20px;
 }
 
-/* Botón Hamburguesa */
+/* Botón menú hamburguesa */
 .hamburger-btn {
     background: none;
     border: none;
@@ -68,12 +68,12 @@ body {
     transition: transform 0.3s, opacity 0.3s;
 }
 
-/* Logo que aparece cuando el botón hamburguesa está activo */
-.hamburger-btn.active {
+/* Logo aparece cuando menú activo */
+.hamburger-btn.activo {
     position: relative;
 }
 
-.hamburger-btn.active::after {
+.hamburger-btn.activo::after {
     content: '';
     position: absolute;
     width: 40px;
@@ -83,10 +83,10 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0;
-    animation: fadeInLogo 0.3s ease 0.2s forwards;
+    animation: mostrarLogo 0.3s ease 0.2s forwards;
 }
 
-@keyframes fadeInLogo {
+@keyframes mostrarLogo {
     from {
         opacity: 0;
         transform: scale(0.8);
@@ -97,19 +97,19 @@ body {
     }
 }
 
-.hamburger-btn.active .hamburger-line:nth-child(1) {
+.hamburger-btn.activo .hamburger-line:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
 }
 
-.hamburger-btn.active .hamburger-line:nth-child(2) {
+.hamburger-btn.activo .hamburger-line:nth-child(2) {
     opacity: 0;
 }
 
-.hamburger-btn.active .hamburger-line:nth-child(3) {
+.hamburger-btn.activo .hamburger-line:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Logo en navbar (oculto en móvil) */
+/* Logo en navbar */
 .navbar-logo {
     display: flex;
     align-items: center;
@@ -122,7 +122,7 @@ body {
     object-fit: contain;
 }
 
-/* Lado derecho del navbar */
+/* Sección derecha navbar */
 .navbar-right {
     display: flex;
     align-items: center;
@@ -172,12 +172,12 @@ body {
     overflow: hidden;
 }
 
-.notifications-dropdown.show {
+.notifications-dropdown.mostrar {
     display: block;
-    animation: fadeIn 0.2s ease;
+    animation: aparecer 0.2s ease;
 }
 
-@keyframes fadeIn {
+@keyframes aparecer {
     from {
         opacity: 0;
         transform: translateY(-10px);
@@ -210,7 +210,7 @@ body {
     font-size: 14px;
 }
 
-/* Perfil de usuario */
+/* Perfil usuario */
 .user-profile {
     display: flex;
     align-items: center;
@@ -263,7 +263,7 @@ body {
     line-height: 1.4;
 }
 
-/* Dropdown del usuario */
+/* Menú desplegable usuario */
 .user-dropdown {
     position: absolute;
     top: 100%;
@@ -279,9 +279,9 @@ body {
     overflow: hidden;
 }
 
-.user-dropdown.show {
+.user-dropdown.mostrar {
     display: block;
-    animation: fadeIn 0.2s ease;
+    animation: aparecer 0.2s ease;
 }
 
 .dropdown-header {
@@ -326,7 +326,7 @@ body {
     min-width: 20px;
 }
 
-/* ===== SIDEBAR ===== */
+/* BARRA LATERAL */
 .sidebar {
     position: fixed;
     left: 0;
@@ -378,7 +378,7 @@ body {
     color: #111827;
 }
 
-.nav-item.active .nav-link {
+.nav-item.activo .nav-link {
     background-color: #f0f9ff;
     color: #0369a1;
     border-left: 3px solid #0369a1;
@@ -396,7 +396,7 @@ body {
     font-weight: 500;
 }
 
-/* Sección de cerrar sesión en sidebar */
+/* Sección cerrar sesión */
 .logout-section {
     margin-top: auto;
     padding: 20px 24px;
@@ -439,8 +439,8 @@ body {
     font-weight: 500;
 }
 
-/* Overlay para móvil */
-.sidebar-overlay {
+/* Capa overlay móvil */
+.capa-lateral {
     position: fixed;
     top: 0;
     left: 0;
@@ -451,8 +451,8 @@ body {
     display: none;
 }
 
-/* ===== CONTENIDO PRINCIPAL ===== */
-.main-content {
+/* CONTENIDO PRINCIPAL */
+.contenido-principal {
     margin-top: 70px;
     margin-left: 260px;
     flex: 1;
@@ -462,37 +462,37 @@ body {
     background-color: #f9fafb;
 }
 
-.container {
+.contenedor {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Header del dashboard */
-.dashboard-header {
+/* Encabezado panel */
+.encabezado-panel {
     margin-bottom: 32px;
 }
 
-.dashboard-header h1 {
+.encabezado-panel h1 {
     font-size: 32px;
     font-weight: 700;
     color: #111827;
     margin-bottom: 8px;
 }
 
-.dashboard-subtitle {
+.subtitulo-panel {
     font-size: 16px;
     color: #6b7280;
 }
 
-/* Grid de métricas */
-.metrics-grid {
+/* Cuadrícula métricas */
+.cuadricula-metricas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 24px;
     margin-bottom: 32px;
 }
 
-.metric-card {
+.tarjeta-metrica {
     background: white;
     border-radius: 16px;
     padding: 24px;
@@ -500,19 +500,19 @@ body {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.metric-card:hover {
+.tarjeta-metrica:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.metric-header {
+.encabezado-metrica {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 16px;
 }
 
-.metric-title {
+.titulo-metrica {
     font-size: 14px;
     font-weight: 500;
     color: #6b7280;
@@ -520,7 +520,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-.metric-icon {
+.icono-metrica {
     width: 48px;
     height: 48px;
     background: #f0f9ff;
@@ -530,52 +530,52 @@ body {
     justify-content: center;
 }
 
-.metric-icon img {
+.icono-metrica img {
     width: 24px;
     height: 24px;
     object-fit: contain;
 }
 
-.metric-value {
+.valor-metrica {
     font-size: 32px;
     font-weight: 700;
     color: #111827;
     margin-bottom: 8px;
 }
 
-.metric-change {
+.variacion-metrica {
     font-size: 14px;
 }
 
-.change-label {
+.etiqueta-variacion {
     color: #6b7280;
 }
 
-.change-label.positive {
+.etiqueta-variacion.positivo {
     color: #059669;
 }
 
-.change-label.negative {
+.etiqueta-variacion.negativo {
     color: #dc2626;
 }
 
 /* Segunda fila: Gráfica y productos */
-.dashboard-row {
+.fila-panel {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
     margin-bottom: 32px;
 }
 
-.chart-container,
-.top-products-container {
+.contenedor-grafica,
+.contenedor-top-productos {
     background: white;
     border-radius: 16px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
-.chart-header {
+.encabezado-grafica {
     padding: 24px 24px 0;
     display: flex;
     justify-content: space-between;
@@ -583,18 +583,18 @@ body {
     margin-bottom: 20px;
 }
 
-.chart-title {
+.titulo-grafica {
     font-size: 20px;
     font-weight: 600;
     color: #111827;
 }
 
-.chart-period {
+.periodo-grafica {
     display: flex;
     gap: 8px;
 }
 
-.period-btn {
+.boton-periodo {
     padding: 6px 12px;
     border: 1px solid #e5e7eb;
     background: white;
@@ -605,48 +605,48 @@ body {
     transition: all 0.2s;
 }
 
-.period-btn:hover {
+.boton-periodo:hover {
     background: #f9fafb;
 }
 
-.period-btn.active {
+.boton-periodo.activo {
     background: #3b82f6;
     color: white;
     border-color: #3b82f6;
 }
 
-.chart-wrapper {
-    padding: 0 24px 50px; /* Más padding inferior para los valores */
+.caja-grafica {
+    padding: 0 24px 50px;
     height: 300px;
     position: relative;
 }
 
-.chart-summary {
+.resumen-grafica {
     padding: 20px 24px;
     border-top: 1px solid #e5e7eb;
     display: flex;
     gap: 24px;
 }
 
-.summary-item {
+.item-resumen {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-.summary-label {
+.etiqueta-resumen {
     font-size: 14px;
     color: #6b7280;
 }
 
-.summary-value {
+.valor-resumen {
     font-size: 16px;
     font-weight: 600;
     color: #111827;
 }
 
 /* Productos más vendidos */
-.top-products-header {
+.encabezado-top-productos {
     padding: 24px 24px 0;
     display: flex;
     justify-content: space-between;
@@ -654,39 +654,39 @@ body {
     margin-bottom: 20px;
 }
 
-.top-products-title {
+.titulo-top-productos {
     font-size: 20px;
     font-weight: 600;
     color: #111827;
 }
 
-.top-products-actions {
+.acciones-top-productos {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-.period-label {
+.etiqueta-periodo {
     font-size: 14px;
     color: #6b7280;
 }
 
-.view-all-link {
+.enlace-ver-todo {
     font-size: 14px;
     color: #3b82f6;
     text-decoration: none;
     font-weight: 500;
 }
 
-.view-all-link:hover {
+.enlace-ver-todo:hover {
     text-decoration: underline;
 }
 
-.top-products-list {
+.lista-top-productos {
     padding: 0 24px 24px;
 }
 
-.top-product-item {
+.item-top-producto {
     display: flex;
     align-items: center;
     gap: 16px;
@@ -694,18 +694,18 @@ body {
     border-bottom: 1px solid #f3f4f6;
 }
 
-.top-product-item:last-child {
+.item-top-producto:last-child {
     border-bottom: none;
 }
 
-.product-rank {
+.posicion-producto {
     font-size: 18px;
     font-weight: 700;
     color: #9ca3af;
     min-width: 24px;
 }
 
-.product-image {
+.imagen-producto {
     width: 60px;
     height: 60px;
     border-radius: 12px;
@@ -714,13 +714,13 @@ body {
     flex-shrink: 0;
 }
 
-.product-image img {
+.imagen-producto img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.product-image-placeholder {
+.placeholder-imagen {
     width: 100%;
     height: 100%;
     display: flex;
@@ -729,12 +729,12 @@ body {
     font-size: 24px;
 }
 
-.product-info {
+.info-producto {
     flex: 1;
     min-width: 0;
 }
 
-.product-name {
+.nombre-producto {
     font-size: 16px;
     font-weight: 600;
     color: #111827;
@@ -744,25 +744,25 @@ body {
     text-overflow: ellipsis;
 }
 
-.product-brand {
+.marca-producto {
     font-size: 14px;
     color: #6b7280;
 }
 
-.product-stats {
+.estadisticas-producto {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 4px;
 }
 
-.product-price {
+.precio-producto {
     font-size: 18px;
     font-weight: 700;
     color: #111827;
 }
 
-.product-sales {
+.ventas-producto {
     display: flex;
     align-items: center;
     gap: 4px;
@@ -770,22 +770,22 @@ body {
     color: #6b7280;
 }
 
-.no-data-message {
+.mensaje-sin-datos {
     text-align: center;
     padding: 40px 20px;
     color: #6b7280;
     font-size: 14px;
 }
 
-/* Tabla de órdenes recientes */
-.recent-orders-container {
+/* Tabla pedidos recientes */
+.contenedor-pedidos-recientes {
     background: white;
     border-radius: 16px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
-.recent-orders-header {
+.encabezado-pedidos-recientes {
     padding: 24px 24px 0;
     display: flex;
     justify-content: space-between;
@@ -793,22 +793,22 @@ body {
     margin-bottom: 20px;
 }
 
-.recent-orders-title {
+.titulo-pedidos-recientes {
     font-size: 20px;
     font-weight: 600;
     color: #111827;
 }
 
-.orders-table {
+.tabla-pedidos {
     width: 100%;
     border-collapse: collapse;
 }
 
-.orders-table thead {
+.tabla-pedidos thead {
     background-color: #f9fafb;
 }
 
-.orders-table th {
+.tabla-pedidos th {
     padding: 16px 24px;
     text-align: left;
     font-size: 14px;
@@ -817,18 +817,19 @@ body {
     border-bottom: 1px solid #e5e7eb;
 }
 
-.orders-table td {
+.tabla-pedidos td {
     padding: 20px 24px;
     font-size: 14px;
     color: #374151;
     border-bottom: 1px solid #f3f4f6;
 }
 
-.orders-table tbody tr:hover {
+.tabla-pedidos tbody tr:hover {
     background-color: #f9fafb;
 }
 
-.orders-table .column-status {
+/* Estados pedidos */
+.tabla-pedidos .columna-estado {
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 12px;
@@ -837,24 +838,37 @@ body {
     letter-spacing: 0.5px;
 }
 
-.orders-table .status-completado {
+.tabla-pedidos .estado-completado {
     background-color: #d1fae5;
     color: #065f46;
 }
 
-.orders-table .status-pendiente {
+.tabla-pedidos .estado-pendiente {
     background-color: #fef3c7;
     color: #92400e;
 }
 
-.orders-table .status-cancelado {
+.tabla-pedidos .estado-cancelado {
     background-color: #fee2e2;
     color: #991b1b;
 }
 
-.orders-table .status-en-proceso {
+.tabla-pedidos .estado-en-proceso {
     background-color: #dbeafe;
     color: #1e40af;
+}
+
+/* Mensajes tabla */
+.mensaje-vacio {
+    text-align: center;
+    padding: 40px;
+    color: #6b7280;
+}
+
+.mensaje-error {
+    text-align: center;
+    padding: 40px;
+    color: #dc2626;
 }
 
 /* Scrollbar personalizado */
@@ -875,23 +889,22 @@ body {
     background: #a8a8a8;
 }
 
-/* Estilos para la gráfica de Chart.js */
+/* Canvas gráfica */
 canvas {
     max-width: 100%;
     height: auto;
 }
 
-/* Asegurar que el canvas ocupe todo el espacio */
-#salesChart {
+#graficaVentas {
     width: 100% !important;
     height: 100% !important;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* === DISEÑO RESPONSIVO === */
 
-/* Desktop (más de 1024px) */
+/* Desktop grande (más de 1024px) */
 @media (min-width: 1025px) {
-    /* Ocultar botón hamburguesa en desktop */
+    /* Ocultar botón hamburguesa */
     #hamburger-btn {
         display: none !important;
     }
@@ -899,51 +912,51 @@ canvas {
 
 /* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
-    .dashboard-row {
+    .fila-panel {
         grid-template-columns: 1fr;
     }
     
-    .metrics-grid {
+    .cuadricula-metricas {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .container {
+    .contenedor {
         max-width: 100%;
         padding: 0 16px;
     }
     
-    .main-content {
+    .contenido-principal {
         padding: 20px;
     }
     
-    /* Ocultar logo en navbar en tablet */
+    /* Logo navbar en tablet */
     .navbar-logo {
         display: none;
     }
     
-    /* Mostrar botón hamburguesa en tablet */
+    /* Mostrar botón menú */
     #hamburger-btn {
         display: flex;
     }
     
-    /* Ajustar navbar para tablet */
+    /* Ajustes navbar tablet */
     .navbar {
         left: 0;
         justify-content: space-between;
     }
     
-    /* Sidebar en tablet */
+    /* Barra lateral tablet */
     .sidebar {
         transform: translateX(-100%);
         width: 280px;
     }
     
-    .sidebar.active {
+    .sidebar.activo {
         transform: translateX(0);
     }
     
-    /* Contenido principal en tablet */
-    .main-content {
+    /* Contenido principal tablet */
+    .contenido-principal {
         margin-left: 0;
     }
 }
@@ -958,37 +971,37 @@ canvas {
     .sidebar {
         transform: translateX(-100%);
         width: 280px;
-        top: 60px; /* Más arriba en móvil */
+        top: 60px;
         height: calc(100vh - 60px);
     }
     
-    .sidebar.active {
+    .sidebar.activo {
         transform: translateX(0);
     }
     
-    .sidebar-overlay.active {
+    .capa-lateral.activo {
         display: block;
         top: 60px;
     }
     
-    .main-content {
+    .contenido-principal {
         margin-top: 60px;
         margin-left: 0;
         padding: 16px;
         min-height: calc(100vh - 60px);
     }
     
-    /* Botón hamburguesa visible */
+    /* Botón menú visible */
     #hamburger-btn {
         display: flex;
     }
     
-    /* Ocultar logo en navbar en móvil */
+    /* Ocultar logo navbar móvil */
     .navbar-logo {
         display: none;
     }
     
-    /* Reducir tamaño de elementos en móvil */
+    /* Reducir elementos móvil */
     .logo-img {
         height: 32px;
     }
@@ -1010,7 +1023,6 @@ canvas {
     .hamburger-btn {
         width: 66px;
         height: 36px;
-    
     }
     
     .notifications-dropdown {
@@ -1023,37 +1035,37 @@ canvas {
         right: -20px;
     }
     
-    /* Dashboard en móvil */
-    .dashboard-header h1 {
+    /* Panel móvil */
+    .encabezado-panel h1 {
         font-size: 28px;
     }
     
-    .metrics-grid {
+    .cuadricula-metricas {
         grid-template-columns: 1fr;
         gap: 16px;
     }
     
-    .metric-value {
+    .valor-metrica {
         font-size: 28px;
     }
     
-    .chart-wrapper {
+    .caja-grafica {
         height: 250px;
         padding: 0 16px 50px;
     }
     
-    .chart-summary {
+    .resumen-grafica {
         flex-direction: column;
         gap: 16px;
     }
     
-    .orders-table {
+    .tabla-pedidos {
         display: block;
         overflow-x: auto;
     }
     
-    .orders-table th,
-    .orders-table td {
+    .tabla-pedidos th,
+    .tabla-pedidos td {
         padding: 12px 16px;
     }
 }
@@ -1070,11 +1082,11 @@ canvas {
         height: calc(100vh - 56px);
     }
     
-    .sidebar-overlay.active {
+    .capa-lateral.activo {
         top: 56px;
     }
     
-    .main-content {
+    .contenido-principal {
         margin-top: 56px;
         min-height: calc(100vh - 56px);
         padding: 12px;
@@ -1104,27 +1116,27 @@ canvas {
         font-size: 14px;
     }
     
-    .chart-header,
-    .top-products-header,
-    .recent-orders-header {
+    .encabezado-grafica,
+    .encabezado-top-productos,
+    .encabezado-pedidos-recientes {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
     }
     
-    .chart-period {
+    .periodo-grafica {
         align-self: flex-start;
     }
     
-    .top-products-actions {
+    .acciones-top-productos {
         align-self: flex-start;
     }
     
-    .top-product-item {
+    .item-top-producto {
         flex-wrap: wrap;
     }
     
-    .product-stats {
+    .estadisticas-producto {
         width: 100%;
         flex-direction: row;
         justify-content: space-between;

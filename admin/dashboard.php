@@ -116,7 +116,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Burmex Admin</title>
+    <title>Panel de Control - Burmex Admin</title>
     <link rel="stylesheet" href="../styles/css/dashboard.css">
     <link rel="icon" type="image/x-icon" href="../img/img-inicio/logo-icon.ico">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -126,29 +126,29 @@ try {
     <?php include_once 'includes/sidebar.php'; ?>
     
     <!-- Overlay para móvil -->
-    <div class="sidebar-overlay"></div>
+    <div class="capa-lateral"></div>
 
     <!-- Contenido principal -->
-    <main class="main-content">
-        <div class="container">
+    <main class="contenido-principal">
+        <div class="contenedor">
             <!-- Título -->
-            <div class="dashboard-header">
-                <h1>Dashboard</h1>
-                <p class="dashboard-subtitle">Resumen general de tu tienda</p>
+            <div class="encabezado-panel">
+                <h1>Panel de Control</h1>
+                <p class="subtitulo-panel">Resumen general de la tienda</p>
             </div> 
 
             <!-- Métricas -->
-            <div class="metrics-grid">
+            <div class="cuadricula-metricas">
                 <!-- Métrica 1: Ventas del mes -->
-                <div class="metric-card">
-                    <div class="metric-header">
-                        <h3 class="metric-title">Venta del mes</h3>
-                        <div class="metric-icon">
+                <div class="tarjeta-metrica">
+                    <div class="encabezado-metrica">
+                        <h3 class="titulo-metrica">Venta del mes</h3>
+                        <div class="icono-metrica">
                             <img src="../img/img-dash/dollar.png" alt="Ventas">
                         </div>
                     </div>
-                    <div class="metric-value">$<?php echo formatoMoneda($ventas_mes['ventas_mes'] ?? 0); ?></div>
-                    <div class="metric-change">
+                    <div class="valor-metrica">$<?php echo formatoMoneda($ventas_mes['ventas_mes'] ?? 0); ?></div>
+                    <div class="variacion-metrica">
                         <?php
                         $venta_actual = $ventas_mes['ventas_mes'] ?? 0;
                         $venta_anterior = $ventas_mes_anterior['ventas_mes'] ?? 0;
@@ -156,84 +156,84 @@ try {
                         
                         if ($venta_anterior > 0) {
                             $porcentaje = ($diferencia / $venta_anterior) * 100;
-                            $clase = $diferencia >= 0 ? 'positive' : 'negative';
+                            $clase = $diferencia >= 0 ? 'positivo' : 'negativo';
                             $icono = $diferencia >= 0 ? '↗' : '↘';
-                            echo '<span class="change-label ' . $clase . '">' . $icono . ' ' . abs(round($porcentaje, 1)) . '% vs mes pasado</span>';
+                            echo '<span class="etiqueta-variacion ' . $clase . '">' . $icono . ' ' . abs(round($porcentaje, 1)) . '% vs mes pasado</span>';
                         } else {
-                            echo '<span class="change-label">No hay datos del mes pasado</span>';
+                            echo '<span class="etiqueta-variacion">No hay datos del mes pasado</span>';
                         }
                         ?>
                     </div>
                 </div>
 
                 <!-- Métrica 2: Órdenes totales -->
-                <div class="metric-card">
-                    <div class="metric-header">
-                        <h3 class="metric-title">Órdenes totales</h3>
-                        <div class="metric-icon">
+                <div class="tarjeta-metrica">
+                    <div class="encabezado-metrica">
+                        <h3 class="titulo-metrica">Pedidos totales</h3>
+                        <div class="icono-metrica">
                             <img src="../img/img-dash/package.png" alt="Órdenes">
                         </div>
                     </div>
-                    <div class="metric-value"><?php echo formatoNumero($ordenes['total_ordenes'] ?? 0); ?></div>
-                    <div class="metric-change">
-                        <span class="change-label">Total de pedidos completados</span>
+                    <div class="valor-metrica"><?php echo formatoNumero($ordenes['total_ordenes'] ?? 0); ?></div>
+                    <div class="variacion-metrica">
+                        <span class="etiqueta-variacion">Total de pedidos completados</span>
                     </div>
                 </div>
 
                 <!-- Métrica 3: Productos activos -->
-                <div class="metric-card">
-                    <div class="metric-header">
-                        <h3 class="metric-title">Productos activos</h3>
-                        <div class="metric-icon">
+                <div class="tarjeta-metrica">
+                    <div class="encabezado-metrica">
+                        <h3 class="titulo-metrica">Productos activos</h3>
+                        <div class="icono-metrica">
                             <img src="../img/img-dash/product.png" alt="Productos">
                         </div>
                     </div>
-                    <div class="metric-value"><?php echo formatoNumero($productos['total_productos'] ?? 0); ?></div>
-                    <div class="metric-change">
-                        <span class="change-label">Disponibles en catálogo</span>
+                    <div class="valor-metrica"><?php echo formatoNumero($productos['total_productos'] ?? 0); ?></div>
+                    <div class="variacion-metrica">
+                        <span class="etiqueta-variacion">Disponibles en catálogo</span>
                     </div>
                 </div>
 
                 <!-- Métrica 4: Clientes nuevos -->
-                <div class="metric-card">
-                    <div class="metric-header">
-                        <h3 class="metric-title">Clientes nuevos</h3>
-                        <div class="metric-icon">
+                <div class="tarjeta-metrica">
+                    <div class="encabezado-metrica">
+                        <h3 class="titulo-metrica">Clientes nuevos</h3>
+                        <div class="icono-metrica">
                             <img src="../img/img-dash/users.png" alt="Clientes">
                         </div>
                     </div>
-                    <div class="metric-value"><?php echo formatoNumero($clientes['clientes_nuevos'] ?? 0); ?></div>
-                    <div class="metric-change">
-                        <span class="change-label">Este mes</span>
+                    <div class="valor-metrica"><?php echo formatoNumero($clientes['clientes_nuevos'] ?? 0); ?></div>
+                    <div class="variacion-metrica">
+                        <span class="etiqueta-variacion">Este mes</span>
                     </div>
                 </div>
             </div>
 
             <!-- Segunda fila: Gráfica y Productos más vendidos -->
-            <div class="dashboard-row">
+            <div class="fila-panel">
                 <!-- Gráfica de ventas mensuales -->
-                <div class="chart-container">
-                    <div class="chart-header">
-                        <h2 class="chart-title">Ventas mensuales</h2>
-                        <div class="chart-period">
-                            <button class="period-btn active" data-period="6m">6M</button>
-                            <button class="period-btn" data-period="1y">1A</button>
+                <div class="contenedor-grafica">
+                    <div class="encabezado-grafica">
+                        <h2 class="titulo-grafica">Ventas mensuales</h2>
+                        <div class="periodo-grafica">
+                            <button class="boton-periodo activo" data-periodo="6m">6M</button>
+                            <button class="boton-periodo" data-periodo="1y">1A</button>
                         </div>
                     </div>
-                    <div class="chart-wrapper">
-                        <canvas id="salesChart" 
+                    <div class="caja-grafica">
+                        <canvas id="graficaVentas" 
                                 data-meses='<?php echo json_encode($meses_grafica); ?>'
                                 data-ventas='<?php echo json_encode($ventas_grafica); ?>'>
                         </canvas>
                     </div>
-                    <div class="chart-summary">
-                        <div class="summary-item">
-                            <span class="summary-label">Total 6 meses:</span>
-                            <span class="summary-value">$<?php echo formatoMoneda(array_sum($ventas_grafica)); ?></span>
+                    <div class="resumen-grafica">
+                        <div class="item-resumen">
+                            <span class="etiqueta-resumen">Total 6 meses:</span>
+                            <span class="valor-resumen">$<?php echo formatoMoneda(array_sum($ventas_grafica)); ?></span>
                         </div>
-                        <div class="summary-item">
-                            <span class="summary-label">Promedio mensual:</span>
-                            <span class="summary-value">$<?php 
+                        <div class="item-resumen">
+                            <span class="etiqueta-resumen">Promedio mensual:</span>
+                            <span class="valor-resumen">$<?php 
                                 $promedio = count($ventas_grafica) > 0 ? array_sum($ventas_grafica) / count($ventas_grafica) : 0;
                                 echo formatoMoneda($promedio); 
                             ?></span>
@@ -242,44 +242,44 @@ try {
                 </div>
 
                 <!-- Productos más vendidos -->
-                <div class="top-products-container">
-                    <div class="top-products-header">
-                        <h2 class="top-products-title">Productos más vendidos</h2>
-                        <div class="top-products-actions">
-                            <span class="period-label">Este mes</span>
-                            <a href="../admin/productos/index.php" class="view-all-link">Ver todos</a>
+                <div class="contenedor-top-productos">
+                    <div class="encabezado-top-productos">
+                        <h2 class="titulo-top-productos">Productos más vendidos</h2>
+                        <div class="acciones-top-productos">
+                            <span class="etiqueta-periodo">Este mes</span>
+                            <a href="../admin/productos/index.php" class="enlace-ver-todo">Ver todos</a>
                         </div>
                     </div>
-                    <div class="top-products-list">
+                    <div class="lista-top-productos">
                         <?php if (count($productos_mas_vendidos) > 0): ?>
                             <?php foreach ($productos_mas_vendidos as $index => $producto): ?>
-                                <div class="top-product-item">
-                                    <div class="product-rank">#<?php echo $index + 1; ?></div>
-                                    <div class="product-image">
+                                <div class="item-top-producto">
+                                    <div class="posicion-producto">#<?php echo $index + 1; ?></div>
+                                    <div class="imagen-producto">
                                         <?php if (!empty($producto['imagen_url'])): ?>
                                             <img src="../<?php echo htmlspecialchars($producto['imagen_url']); ?>" 
                                                  alt="<?php echo htmlspecialchars($producto['nombre_producto']); ?>">
                                         <?php else: ?>
-                                            <div class="product-image-placeholder">
+                                            <div class="placeholder-imagen">
                                                 <span>🖥️</span>
                                             </div>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="product-info">
-                                        <h4 class="product-name"><?php echo htmlspecialchars($producto['nombre_producto']); ?></h4>
-                                        <p class="product-brand"><?php echo htmlspecialchars($producto['nombre_marca']); ?></p>
+                                    <div class="info-producto">
+                                        <h4 class="nombre-producto"><?php echo htmlspecialchars($producto['nombre_producto']); ?></h4>
+                                        <p class="marca-producto"><?php echo htmlspecialchars($producto['nombre_marca']); ?></p>
                                     </div>
-                                    <div class="product-stats">
-                                        <div class="product-price">$<?php echo formatoMoneda($producto['precio']); ?></div>
-                                        <div class="product-sales">
-                                            <span class="sales-icon">📦</span>
-                                            <span class="sales-count"><?php echo formatoNumero($producto['unidades_vendidas']); ?> vendidos</span>
+                                    <div class="estadisticas-producto">
+                                        <div class="precio-producto">$<?php echo formatoMoneda($producto['precio']); ?></div>
+                                        <div class="ventas-producto">
+                                            <span class="icono-ventas">📦</span>
+                                            <span class="cantidad-ventas"><?php echo formatoNumero($producto['unidades_vendidas']); ?> vendidos</span>
                                         </div>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
                         <?php else: ?>
-                            <div class="no-data-message">
+                            <div class="mensaje-sin-datos">
                                 <p>No hay datos de ventas este mes</p>
                             </div>
                         <?php endif; ?>
@@ -287,19 +287,19 @@ try {
                 </div>
             </div>
 
-            <!-- Órdenes recientes -->
-            <div class="recent-orders-container">
-                <div class="recent-orders-header">
-                    <h2 class="recent-orders-title">Órdenes recientes</h2>
-                    <div class="recent-orders-actions">
-                        <a href="../admin/ordenes/index.php" class="view-all-link">Ver todas las órdenes</a>
+            <!-- Pedidos recientes -->
+            <div class="contenedor-pedidos-recientes">
+                <div class="encabezado-pedidos-recientes">
+                    <h2 class="titulo-pedidos-recientes">Pedidos recientes</h2>
+                    <div class="acciones-pedidos-recientes">
+                        <a href="../admin/ordenes/index.php" class="enlace-ver-todo">Ver todos los pedidos</a>
                     </div>
                 </div>
                 
-                <table class="orders-table">
+                <table class="tabla-pedidos">
                     <thead>
                         <tr>
-                            <th>Orden</th>
+                            <th>Pedido</th>
                             <th>Cliente</th>
                             <th>Producto</th>
                             <th>Monto</th>
@@ -309,9 +309,9 @@ try {
                     </thead>
                     <tbody>
                         <?php
-                        // Obtener 5 órdenes recientes
+                        // Obtener 5 pedidos recientes
                         try {
-                            $sql_ordenes_recientes = "SELECT 
+                            $sql_pedidos_recientes = "SELECT 
                                 o.id_orden,
                                 o.nombre_cliente,
                                 o.total,
@@ -328,58 +328,66 @@ try {
                             ORDER BY o.fecha_orden DESC
                             LIMIT 5";
                             
-                            $stmt = $conn->prepare($sql_ordenes_recientes);
+                            $stmt = $conn->prepare($sql_pedidos_recientes);
                             $stmt->execute();
-                            $ordenes_recientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            $pedidos_recientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             
-                            if (count($ordenes_recientes) > 0):
-                                foreach ($ordenes_recientes as $orden):
+                            if (count($pedidos_recientes) > 0):
+                                foreach ($pedidos_recientes as $pedido):
                                     // Limitar nombre del producto
-                                    $producto = $orden['producto_principal'] ?: 'Sin producto';
+                                    $producto = $pedido['producto_principal'] ?: 'Sin producto';
                                     if (strlen($producto) > 25) {
                                         $producto = substr($producto, 0, 25) . '...';
                                     }
                                     
                                     // Clase CSS según estado
-                                    $clase_estado = 'status-' . $orden['estado'];
+                                    $clase_estado = 'estado-' . $pedido['estado'];
                                     
                                     // Limitar nombre del cliente
-                                    $cliente = htmlspecialchars($orden['nombre_cliente'] ?: 'Cliente no especificado');
+                                    $cliente = htmlspecialchars($pedido['nombre_cliente'] ?: 'Cliente no especificado');
                                     if (strlen($cliente) > 20) {
                                         $cliente = substr($cliente, 0, 20) . '...';
                                     }
                         ?>
                         <tr>
-                            <td class="column-order">#<?php echo $orden['id_orden']; ?></td>
-                            <td class="column-client"><?php echo $cliente; ?></td>
-                            <td class="column-product" title="<?php echo htmlspecialchars($orden['producto_principal'] ?: ''); ?>">
+                            <td class="columna-pedido">#<?php echo $pedido['id_orden']; ?></td>
+                            <td class="columna-cliente"><?php echo $cliente; ?></td>
+                            <td class="columna-producto" title="<?php echo htmlspecialchars($pedido['producto_principal'] ?: ''); ?>">
                                 <?php echo htmlspecialchars($producto); ?>
                             </td>
-                            <td class="column-amount">$<?php echo formatoMoneda($orden['total']); ?></td>
+                            <td class="columna-monto">$<?php echo formatoMoneda($pedido['total']); ?></td>
                             <td>
-                                <span class="column-status <?php echo $clase_estado; ?>">
-                                    <?php echo ucfirst($orden['estado']); ?>
+                                <span class="columna-estado <?php echo $clase_estado; ?>">
+                                    <?php 
+                                    $estados = [
+                                        'completado' => 'Completado',
+                                        'pendiente' => 'Pendiente',
+                                        'cancelado' => 'Cancelado',
+                                        'en-proceso' => 'En Proceso'
+                                    ];
+                                    echo $estados[$pedido['estado']] ?? ucfirst($pedido['estado']);
+                                    ?>
                                 </span>
                             </td>
-                            <td class="column-date"><?php echo $orden['fecha_formateada']; ?></td>
+                            <td class="columna-fecha"><?php echo $pedido['fecha_formateada']; ?></td>
                         </tr>
                         <?php
                                 endforeach;
                             else:
                         ?>
                         <tr>
-                            <td colspan="6" style="text-align: center; padding: 40px; color: #6b7280;">
-                                No hay órdenes recientes
+                            <td colspan="6" class="mensaje-vacio">
+                                No hay pedidos recientes
                             </td>
                         </tr>
                         <?php
                             endif;
                         } catch (PDOException $e) {
-                            error_log("Error obteniendo órdenes recientes: " . $e->getMessage());
+                            error_log("Error obteniendo pedidos recientes: " . $e->getMessage());
                         ?>
                         <tr>
-                            <td colspan="6" style="text-align: center; padding: 40px; color: #dc2626;">
-                                Error al cargar las órdenes
+                            <td colspan="6" class="mensaje-error">
+                                Error al cargar los pedidos
                             </td>
                         </tr>
                         <?php

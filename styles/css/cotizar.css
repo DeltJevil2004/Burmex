@@ -1,5 +1,7 @@
-/*  HERO BANNER COTIZAR  */
-.hero-banner-cotizar {
+/*  ESTILOS PRINCIPALES COTIZACIÓN  */
+
+/* Banner principal */
+.banner-principal-cotizar {
     background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
     color: white;
     padding: 120px 0;
@@ -10,7 +12,7 @@
     position: relative;
 }
 
-.hero-container-cotizar {
+.contenedor-banner-cotizar {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
@@ -18,13 +20,13 @@
     z-index: 2;
 }
 
-.hero-content-cotizar {
+.contenido-banner-cotizar {
     max-width: 800px;
     text-align: center;
     margin: 0 auto;
 }
 
-.hero-title-cotizar {
+.titulo-banner-cotizar {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -32,7 +34,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.hero-text-cotizar {
+.texto-banner-cotizar {
     font-size: 1.3rem;
     margin-bottom: 2.5rem;
     line-height: 1.6;
@@ -40,34 +42,40 @@
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.formulario-section {
+/* Sección principal */
+.seccion-formulario {
     padding: 80px 0;
     background-color: #f8f9fa;
 }
 
-.container {
+.contenedor-principal {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
-/* FORMULARIO */
-.formulario-grid {
+/* Layout de dos columnas */
+.rejilla-formulario {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 50px;
     align-items: start;
 }
 
+/* Columna información */
+.columna-info {
+    position: sticky;
+    top: 20px;
+}
 
-.info-card {
+.tarjeta-info {
     background: white;
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.info-title {
+.titulo-info {
     font-size: 1.4rem;
     font-weight: 700;
     color: #2c3e50;
@@ -75,50 +83,50 @@
     text-align: center;
 }
 
-/* Beneficios */
-.beneficios-list {
+/* Lista beneficios */
+.lista-beneficios {
     margin-bottom: 30px;
 }
 
-.beneficio-item {
+.item-beneficio {
     display: flex;
     align-items: flex-start;
     gap: 15px;
     margin-bottom: 20px;
 }
 
-.beneficio-icon img {
+.icono-beneficio img {
     width: 40px;
     height: 40px;
     object-fit: contain;
 }
 
-.beneficio-content {
+.contenido-beneficio {
     flex: 1;
 }
 
-.beneficio-titulo {
+.titulo-beneficio {
     font-size: 1.1rem;
     font-weight: 600;
     color: #2c3e50;
     margin-bottom: 4px;
 }
 
-.beneficio-texto {
+.texto-beneficio {
     font-size: 0.9rem;
     color: #64748b;
     line-height: 1.4;
 }
 
-/* Cuadro de Contacto */
-.contacto-box {
+/* Caja contacto */
+.caja-contacto {
     background: #EFF6FF;
     border-radius: 8px;
     padding: 25px;
     margin-top: 20px;
 }
 
-.contacto-title {
+.titulo-contacto {
     font-size: 1.1rem;
     font-weight: 700;
     color: #1E3A8A;
@@ -126,64 +134,70 @@
     text-align: center;
 }
 
-.contacto-info {
+.info-contacto {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.contacto-item {
+.item-contacto {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.contacto-icon img {
+.icono-contacto img {
     width: 24px;
     height: 24px;
     object-fit: contain;
 }
 
-.contacto-text {
+.texto-contacto {
     font-size: 0.95rem;
     font-weight: 600;
     color: #1D4ED8;
 }
 
-/* Columna de Formulario */
-.formulario-wrapper {
+/* Columna formulario */
+.columna-formulario {
+    position: relative;
+}
+
+.contenedor-formulario {
     background: white;
     border-radius: 12px;
     padding: 50px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.form-fila {
+/* Estructura formulario */
+.fila-formulario {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     margin-bottom: 30px;
 }
 
-.form-group {
+.grupo-formulario {
     display: flex;
     flex-direction: column;
 }
 
-.form-group.full-width {
+.grupo-formulario.ancho-completo {
     grid-column: 1 / -1;
 }
 
-.form-group label {
+/* Labels y campos */
+.grupo-formulario label {
     font-size: 1rem;
     font-weight: 600;
     color: #2c3e50;
     margin-bottom: 8px;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.grupo-formulario input,
+.grupo-formulario select,
+.grupo-formulario textarea {
     padding: 12px 15px;
     border: 2px solid #e2e8f0;
     border-radius: 6px;
@@ -193,58 +207,62 @@
     transition: all 0.3s ease;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+/* Estados de campos */
+.grupo-formulario input:focus,
+.grupo-formulario select:focus,
+.grupo-formulario textarea:focus {
     outline: none;
     border-color: #3498db;
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
+/* Placeholders */
+.grupo-formulario input::placeholder,
+.grupo-formulario textarea::placeholder {
     color: #a0aec0;
 }
 
-.form-group textarea {
+/* Textarea */
+.grupo-formulario textarea {
     resize: vertical;
     min-height: 100px;
     font-family: inherit;
 }
 
-/* Radio buttons */
-.metodo-radio {
+/* Opciones radio */
+.opciones-radio {
     display: flex;
     gap: 30px;
     margin-top: 10px;
 }
 
-.radio-option {
+.opcion-radio {
     display: flex;
     align-items: center;
     gap: 8px;
     cursor: pointer;
 }
 
-.radio-option input[type="radio"] {
+.opcion-radio input[type="radio"] {
     margin: 0;
     width: 20px;
     height: 20px;
     accent-color: #3498db;
 }
 
-.radio-text {
+.texto-radio {
     font-size: 1rem;
     color: #4a5568;
     font-weight: 500;
 }
 
-.form-submit {
+/* Botón enviar */
+.area-envio {
     text-align: center;
     margin-top: 40px;
 }
 
-.btn-enviar {
+.boton-enviar {
     background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
     color: white;
     border: none;
@@ -259,8 +277,8 @@
     min-width: 300px;
 }
 
-.btn-enviar:hover {
+/* Efecto botón */
+.boton-enviar:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
 }
-
