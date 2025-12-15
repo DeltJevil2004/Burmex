@@ -1,83 +1,90 @@
-/* Responsive */
+/*  VERSIÓN MÓVIL  */
+
+/* Tablet y móviles grandes */
 @media (max-width: 1024px) {
-    .formulario-grid {
+    .rejilla-formulario {
         grid-template-columns: 1fr;
         gap: 40px;
     }
     
-    .info-card {
+    .tarjeta-info {
         max-width: 600px;
         margin: 0 auto;
     }
 }
 
+/* Móviles medianos */
 @media (max-width: 768px) {
-    .formulario-section {
+    .seccion-formulario {
         padding: 60px 0;
     }
     
-    .formulario-wrapper {
+    .contenedor-formulario {
         padding: 35px;
     }
     
-    .form-fila {
+    .fila-formulario {
         grid-template-columns: 1fr;
         gap: 20px;
     }
     
-    .metodo-radio {
+    .opciones-radio {
         flex-direction: column;
         gap: 15px;
     }
     
-    .btn-enviar {
+    .boton-enviar {
         min-width: 250px;
         padding: 14px 30px;
         font-size: 1rem;
     }
     
-    .info-card {
+    .tarjeta-info {
         padding: 25px;
     }
 }
 
+/* Móviles pequeños */
 @media (max-width: 425px) {
-    .formulario-section {
+    .seccion-formulario {
         padding: 40px 0;
     }
     
-    .container {
+    .contenedor-principal {
         padding: 0 1rem;
     }
     
-    .formulario-wrapper {
+    .contenedor-formulario {
         padding: 25px;
     }
     
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
+    /* Campos más compactos */
+    .grupo-formulario input,
+    .grupo-formulario select,
+    .grupo-formulario textarea {
         padding: 10px 12px;
         font-size: 0.95rem;
     }
     
-    .btn-enviar {
+    /* Botón ocupa ancho completo */
+    .boton-enviar {
         min-width: 100%;
         padding: 12px 25px;
         font-size: 0.95rem;
     }
     
-    .info-card {
+    .tarjeta-info {
         padding: 20px;
     }
     
-    .beneficio-item {
+    /* Beneficios en columna */
+    .item-beneficio {
         flex-direction: column;
         text-align: center;
         gap: 10px;
     }
     
-    .beneficio-icon img {
+    .icono-beneficio img {
         width: 35px;
         height: 35px;
         margin: 0 auto;
