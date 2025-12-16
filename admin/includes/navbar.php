@@ -39,7 +39,7 @@ $avatar_letter = !empty($nombre_usuario) ? strtoupper(substr($nombre_usuario, 0,
         <!-- Notificaciones -->
         <div class="notifications">
             <button class="notifications-btn" id="notificationsBtn">
-                <img src="../img/notificacion.png" alt="Notificaciones" class="notifications-icon">
+                <img src="../../img/notificacion.png" alt="Notificaciones" class="notifications-icon">
             </button>
             <div class="notifications-dropdown" id="notificationsDropdown">
                 <div class="notifications-header">
@@ -76,5 +76,7 @@ $avatar_letter = !empty($nombre_usuario) ? strtoupper(substr($nombre_usuario, 0,
 
 <!-- Overlay para móvil -->
 <div class="sidebar-overlay"></div>
+
+<script src="/js/dashboard.js"></script>
 
 </script>

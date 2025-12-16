@@ -1,3 +1,5 @@
+/* USUARIOS - CSS LIMPIO */
+
 /* Encabezado */
 .encabezado-usuarios {
     display: flex;
@@ -85,6 +87,21 @@
     font-size: 0.95rem;
     min-width: 150px;
     cursor: pointer;
+}
+
+/* Información de resultados */
+.info-resultados {
+    background: #f8f9fa;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #495057;
+    border-left: 3px solid #009BDB;
+}
+
+.info-resultados strong {
+    color: #333;
 }
 
 /* Tabla */
@@ -204,6 +221,20 @@
     color: #6c757d;
 }
 
+/* Columnas de fecha */
+.columna-registro,
+.columna-acceso {
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.texto-hora {
+    color: #666;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 0.1rem;
+}
+
 /* Acciones */
 .acciones-usuario {
     display: flex;
@@ -259,21 +290,326 @@
     margin: 0;
 }
 
-/* Columnas de fecha */
-.columna-registro,
-.columna-acceso {
-    font-size: 0.85rem;
+/* Paginación */
+.paginacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.info-paginacion {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.controles-paginacion {
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+}
+
+.pagina-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    background: #f8f9fa;
+    color: #495057;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    border: 1px solid #dee2e6;
+}
+
+.pagina-btn:hover {
+    background: #e9ecef;
+    border-color: #ced4da;
+}
+
+.pagina-btn.activa {
+    background: #009BDB;
+    color: white;
+    border-color: #009BDB;
+    font-weight: 500;
+}
+
+.pagina-btn.primera,
+.pagina-btn.ultima {
+    background: #e9ecef;
+    color: #6c757d;
+}
+
+.pagina-btn.anterior,
+.pagina-btn.siguiente {
+    background: #f8f9fa;
+    color: #495057;
+}
+
+/* Alertas */
+.alert {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.alert-success {
+    background: #e7f6e7;
+    color: #198754;
+    border: 1px solid #b7e4b7;
+}
+
+.alert-error {
+    background: #ffeaea;
+    color: #dc3545;
+    border: 1px solid #f8c6c6;
+}
+
+/* Formulario flotante */
+.formulario-flotante {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.formulario-flotante.mostrar {
+    opacity: 1;
+    visibility: visible;
+}
+
+.formulario-contenido {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.formulario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
+}
+
+.formulario-header h2 {
+    margin: 0;
+    font-size: 1.3rem;
     color: #333;
 }
 
-.texto-hora {
-    color: #666;
-    font-size: 0.8rem;
-    display: block;
-    margin-top: 0.1rem;
+.cerrar-formulario {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
-/* Responsive para tabla  */
+.cerrar-formulario:hover {
+    background: #f5f5f5;
+    color: #666;
+}
+
+/* Campos del formulario */
+.formulario-contenido .grupo-formulario {
+    padding: 0 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.formulario-contenido .etiqueta-formulario {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.formulario-contenido .input-formulario,
+.formulario-contenido .select-formulario {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+.formulario-contenido .input-formulario:focus,
+.formulario-contenido .select-formulario:focus {
+    outline: none;
+    border-color: #009BDB;
+}
+
+.formulario-contenido .grupo-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.formulario-contenido .checkbox-formulario {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    margin-bottom: 0.25rem;
+}
+
+.formulario-contenido .checkbox-formulario input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.formulario-contenido .texto-ayuda {
+    margin-top: 0.25rem;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.formulario-contenido .campos-password {
+    margin-top: 1rem;
+}
+
+/* Botones del formulario */
+.formulario-botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-top: 1px solid #eee;
+    margin-top: 1rem;
+    position: sticky;
+    bottom: 0;
+    background: white;
+}
+
+.formulario-botones .btn-cancelar {
+    background: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #ddd;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.formulario-botones .btn-cancelar:hover {
+    background: #e9ecef;
+}
+
+.formulario-botones .btn-crear,
+.formulario-botones .btn-actualizar {
+    background: #009BDB;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.2s;
+}
+
+.formulario-botones .btn-crear:hover,
+.formulario-botones .btn-actualizar:hover {
+    background: #0085c2;
+}
+
+/* RESPONSIVE */
+
+/* Responsive general */
+@media (max-width: 768px) {
+    .encabezado-usuarios {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .btn-nuevo-usuario {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .filtros-busqueda {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .buscador-usuarios {
+        max-width: 100%;
+    }
+    
+    .filtro-roles select {
+        width: 100%;
+    }
+    
+    .paginacion {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .controles-paginacion {
+        justify-content: center;
+    }
+    
+    .pagina-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Responsive tabla */
 @media (max-width: 1024px) {
     .tabla-usuarios {
         display: block;
@@ -305,46 +641,6 @@
     }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .encabezado-usuarios {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .btn-nuevo-usuario {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .filtros-busqueda {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .buscador-usuarios {
-        max-width: 100%;
-    }
-    
-    .filtro-roles select {
-        width: 100%;
-    }
-    
-    .tabla-usuarios {
-        display: block;
-        overflow-x: auto;
-    }
-    
-    .tabla-usuarios th,
-    .tabla-usuarios td {
-        min-width: 120px;
-    }
-    
-    .columna-usuario .info-usuario {
-        min-width: 200px;
-    }
-}
-
 @media (max-width: 480px) {
     .columna-usuario .info-usuario {
         flex-direction: column;
@@ -362,191 +658,21 @@
     }
 }
 
-
-
-
-/* FORMULARIOS DE USUARIOS */
-
-.alert {
-    padding: 1rem;
-    border-radius: 6px;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-}
-
-.alert-success {
-    background: #e7f6e7;
-    color: #198754;
-    border: 1px solid #b7e4b7;
-}
-
-.alert-error {
-    background: #ffeaea;
-    color: #dc3545;
-    border: 1px solid #f8c6c6;
-}
-
-.contenedor-formulario {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.grupo-formulario {
-    margin-bottom: 1.5rem;
-}
-
-.etiqueta-formulario {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: #333;
-    font-size: 0.95rem;
-}
-
-.input-formulario,
-.select-formulario {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    box-sizing: border-box;
-}
-
-.input-formulario:focus,
-.select-formulario:focus {
-    outline: none;
-    border-color: #009BDB;
-}
-
-.grupo-doble {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.checkbox-formulario {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-}
-
-.checkbox-formulario input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-}
-
-.texto-ayuda {
-    margin-top: 0.25rem;
-    color: #666;
-    font-size: 0.85rem;
-}
-
-.contenedor-botones {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #eee;
-}
-
-.btn-cancelar {
-    background: #f8f9fa;
-    color: #6c757d;
-    border: 1px solid #ddd;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.btn-cancelar:hover {
-    background: #e9ecef;
-}
-
-.btn-crear,
-.btn-actualizar {
-    background: #009BDB;
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: background 0.2s;
-}
-
-.btn-crear:hover,
-.btn-actualizar:hover {
-    background: #0085c2;
-}
-
-/* Responsive formularios */
+/* Responsive formulario */
 @media (max-width: 768px) {
-    .grupo-doble {
+    .formulario-contenido .grupo-doble {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
     
-    .contenedor-formulario {
-        padding: 1.5rem;
-    }
-    
-    .contenedor-botones {
+    .formulario-botones {
         flex-direction: column-reverse;
     }
     
-    .btn-cancelar,
-    .btn-crear,
-    .btn-actualizar {
+    .formulario-botones .btn-cancelar,
+    .formulario-botones .btn-crear,
+    .formulario-botones .btn-actualizar {
         width: 100%;
         justify-content: center;
     }
-}
-
-
-/* Campos de contraseña */
-.campos-password {
-    animation: fadeIn 0.3s ease-in;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Mostrar/ocultar contraseña */
-.grupo-formulario .password-toggle {
-    position: relative;
-}
-
-.password-toggle .input-formulario {
-    padding-right: 40px;
-}
-
-.btn-toggle-password {
-    position: absolute;
-    right: 10px;
-    top: 35px;
-    background: none;
-    border: none;
-    color: #666;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-.btn-toggle-password:hover {
-    color: #333;
 }

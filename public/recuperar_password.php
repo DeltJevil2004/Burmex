@@ -1,5 +1,5 @@
 <?php
-// public/recuperar_password.php - VERSIÓN SIN HASH
+// public/recuperar_password.php 
 session_start();
 require_once '../includes/config.php';
 

@@ -1,0 +1,505 @@
+/* MARCAS */
+
+/* Encabezado */
+.encabezado-marcas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.titulo-seccion h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.subtitulo-seccion {
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+}
+
+.btn-nueva-marca {
+    background: #009BDB;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.2s;
+}
+
+.btn-nueva-marca:hover {
+    background: #0085c2;
+}
+
+/* Buscador */
+.buscador-marcas {
+    margin-bottom: 2rem;
+}
+
+.buscador-input {
+    position: relative;
+    max-width: 400px;
+}
+
+.buscador-input i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.buscador-input input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.buscador-input input:focus {
+    outline: none;
+    border-color: #009BDB;
+}
+
+/* Formulario flotante */
+.formulario-flotante {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.formulario-flotante.mostrar {
+    opacity: 1;
+    visibility: visible;
+}
+
+.formulario-contenido {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.formulario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.formulario-header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.cerrar-formulario {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.cerrar-formulario:hover {
+    background: #f5f5f5;
+    color: #666;
+}
+
+/* Campos del formulario */
+.grupo-formulario {
+    padding: 0 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.etiqueta-formulario {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.input-formulario,
+.textarea-formulario {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+.input-formulario:focus,
+.textarea-formulario:focus {
+    outline: none;
+    border-color: #009BDB;
+}
+
+.textarea-formulario {
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+}
+
+/* Botones del formulario */
+.formulario-botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-top: 1px solid #eee;
+    margin-top: 1rem;
+}
+
+.btn-cancelar {
+    background: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #ddd;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-cancelar:hover {
+    background: #e9ecef;
+}
+
+.btn-crear,
+.btn-actualizar {
+    background: #009BDB;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.2s;
+}
+
+.btn-crear:hover,
+.btn-actualizar:hover {
+    background: #0085c2;
+}
+
+/* Grid de marcas */
+.grid-marcas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.tarjeta-marca {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #eee;
+}
+
+.tarjeta-marca:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* Header de tarjeta */
+.marca-header {
+    position: relative;
+    height: 120px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.marca-imagen {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.marca-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.marca-sin-imagen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #009BDB;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.marca-acciones {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-accion {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.btn-editar {
+    background: #e3f2fd;
+    color: #0d6efd;
+}
+
+.btn-editar:hover {
+    background: #0d6efd;
+    color: white;
+}
+
+.btn-eliminar {
+    background: #ffeaea;
+    color: #dc3545;
+}
+
+.btn-eliminar:hover {
+    background: #dc3545;
+    color: white;
+}
+
+/* Contenido de tarjeta */
+.marca-contenido {
+    padding: 1.5rem;
+    padding-top: 2.5rem;
+}
+
+.marca-nombre {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.marca-descripcion {
+    margin: 0 0 1rem 0;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.marca-sitio-web {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #009BDB;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.marca-sitio-web:hover {
+    color: #0077cc;
+    text-decoration: underline;
+}
+
+.marca-sitio-web i {
+    font-size: 0.8rem;
+}
+
+/* Footer de tarjeta */
+.marca-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #eee;
+    background: #fafafa;
+}
+
+.marca-fecha {
+    font-size: 0.8rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.marca-fecha i {
+    font-size: 0.9rem;
+}
+
+/* Sin marcas */
+.sin-marcas {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #6c757d;
+}
+
+.sin-marcas i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #dee2e6;
+}
+
+.sin-marcas h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    color: #495057;
+}
+
+.sin-marcas p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Alertas */
+.alert {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.alert-success {
+    background: #e7f6e7;
+    color: #198754;
+    border: 1px solid #b7e4b7;
+}
+
+.alert-error {
+    background: #ffeaea;
+    color: #dc3545;
+    border: 1px solid #f8c6c6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .encabezado-marcas {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .btn-nueva-marca {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .buscador-input {
+        max-width: 100%;
+    }
+    
+    .grid-marcas {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    
+    .formulario-contenido {
+        width: 95%;
+    }
+    
+    .formulario-botones {
+        flex-direction: column-reverse;
+    }
+    
+    .btn-cancelar,
+    .btn-crear,
+    .btn-actualizar {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-marcas {
+        grid-template-columns: 1fr;
+    }
+    
+    .marca-header {
+        height: 100px;
+    }
+    
+    .marca-imagen {
+        width: 60px;
+        height: 60px;
+        top: 15px;
+        left: 15px;
+    }
+    
+    .marca-contenido {
+        padding: 1.25rem;
+        padding-top: 2rem;
+    }
+    
+    .marca-acciones {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .btn-accion {
+        width: 28px;
+        height: 28px;
+    }
+}
