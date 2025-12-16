@@ -31,7 +31,7 @@ $avatar_letter = !empty($nombre_usuario) ? strtoupper(substr($nombre_usuario, 0,
         
         <!-- Logo -->
         <div class="logo">
-            <img src="../img/img-inicio/header-logo.png" alt="Burmex Logo" class="logo-img">
+            <img src="../../img/img-inicio/header-logo.png" alt="Burmex Logo" class="logo-img">
         </div>
     </div>
     

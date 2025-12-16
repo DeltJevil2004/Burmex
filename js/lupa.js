@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let isMobileSearchOpen = false;
     let isMenuOpen = false;
     
-    // ===== FUNCIONES PARA EL BUSCADOR DESKTOP =====
+    //  FUNCIONES PARA EL BUSCADOR DESKTOP 
     function openSearch() {
         searchBox.classList.add('active');
         searchToggle.style.opacity = '0';
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         isSearchOpen = false;
     }
     
-    // ===== FUNCIONES PARA EL BUSCADOR MÓVIL =====
+    //  FUNCIONES PARA EL BUSCADOR MÓVIL 
     function openMobileSearch() {
         searchBoxMobile.classList.add('active');
         searchToggleMobile.style.opacity = '0';
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         isMobileSearchOpen = false;
     }
     
-    // ===== FUNCIONES PARA EL MENÚ HAMBURGUESA =====
+    //  FUNCIONES PARA EL MENÚ HAMBURGUESA 
     function openMenu() {
         navMenu.classList.add('active');
         hamburger.classList.add('active');
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // ===== EVENT LISTENERS PARA DESKTOP =====
+    // EVENT LISTENERS PARA DESKTOP 
     if (searchToggle) {
         searchToggle.addEventListener('click', function(e) {
             e.stopPropagation();
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ===== EVENT LISTENERS PARA MÓVIL =====
+    //  EVENT LISTENERS PARA MÓVIL 
     if (searchToggleMobile) {
         searchToggleMobile.addEventListener('click', function(e) {
             e.stopPropagation();
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ===== EVENT LISTENERS COMPARTIDOS =====
+    //  EVENT LISTENERS COMPARTIDOS 
     // Buscar en desktop
     if (searchBtn) {
         searchBtn.addEventListener('click', function(e) {
@@ -144,16 +144,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ===== FUNCIÓN PARA REALIZAR BÚSQUEDA =====
+    //  FUNCIÓN PARA REALIZAR BÚSQUEDA 
     function performSearch(searchTerm) {
         if (searchTerm) {
             console.log('Buscando:', searchTerm);
-            // Aquí puedes agregar la lógica de búsqueda
-            // Ejemplo: window.location.href = `/buscar?q=${encodeURIComponent(searchTerm)}`;
+
         }
     }
     
-    // ===== CERRAR AL HACER CLIC FUERA =====
+    //  CERRAR AL HACER CLIC FUERA 
     document.addEventListener('click', function(e) {
         // Cerrar buscador desktop
         if (isSearchOpen && 
@@ -162,18 +161,18 @@ document.addEventListener('DOMContentLoaded', function() {
             closeSearch();
         }
         
-        // Cerrar buscador móvil - SOLO si se hace clic fuera del buscador
+        // Cerrar buscador móvil
         if (isMobileSearchOpen && 
             !searchBoxMobile.contains(e.target) && 
             !searchToggleMobile.contains(e.target)) {
             closeMobileSearch();
         }
         
-        // Cerrar menú hamburguesa al hacer clic fuera - EXCLUYENDO el buscador móvil
+        // Cerrar menú hamburguesa al hacer clic fuera 
         if (isMenuOpen && 
             !navMenu.contains(e.target) && 
             !hamburger.contains(e.target) &&
-            !searchBoxMobile.contains(e.target)) { // Excluimos el buscador móvil
+            !searchBoxMobile.contains(e.target)) { 
             closeMenu();
         }
     });
@@ -197,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Cerrar menú al hacer clic en un enlace (opcional)
+    // Cerrar menú al hacer clic en un enlace 
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
@@ -207,7 +206,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-        // Cerrar buscador móvil cuando se cierra el menú hamburguesa
-        // Esto ya está manejado en la función closeMenu()
 });
 

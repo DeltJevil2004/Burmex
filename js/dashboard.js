@@ -1,14 +1,13 @@
-// admin/js/dashboard.js
 document.addEventListener('DOMContentLoaded', function() {
-    // Elementos del DOM
+    // Elementos del DOM 
     const notificationsBtn = document.getElementById('notificationsBtn');
     const notificationsDropdown = document.getElementById('notificationsDropdown');
     const userProfile = document.querySelector('.user-profile');
     const userDropdown = document.getElementById('userDropdown');
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const sidebar = document.querySelector('.sidebar');
-    const overlay = document.querySelector('.sidebar-overlay');
-    const periodBtns = document.querySelectorAll('.period-btn');
+    const overlay = document.querySelector('.capa-lateral'); // Cambiado de '.sidebar-overlay'
+    const periodBtns = document.querySelectorAll('.boton-periodo'); // Cambiado de '.period-btn'
 
     // Inicializar funcionalidades
     inicializarDropdowns();
@@ -18,19 +17,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Funciones principales
     function configurarGraficaVentas() {
-        const ctx = document.getElementById('salesChart');
-        if (!ctx) return null;
+        const canvas = document.getElementById('graficaVentas');
+        if (!canvas) return null;
 
         // Obtener datos desde los atributos data-*
-        const meses = JSON.parse(ctx.dataset.meses || '[]');
-        const ventas = JSON.parse(ctx.dataset.ventas || '[]');
+        const meses = JSON.parse(canvas.dataset.meses || '[]');
+        const ventas = JSON.parse(canvas.dataset.ventas || '[]');
         
         // Configurar gradiente para el fondo
-        const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 300);
+        const ctx = canvas.getContext('2d');
+        const gradient = ctx.createLinearGradient(0, 0, 0, 300);
         gradient.addColorStop(0, 'rgba(59, 130, 246, 0.3)');
         gradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
         
-        return new Chart(ctx.getContext('2d'), {
+        return new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: meses,
@@ -131,12 +131,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             font: {
                                 size: 12
                             },
-                            // Ocultar los valores del eje Y ya que ahora están debajo de las barras
+                            // Ocultar los valores del eje Y
                             callback: function() {
                                 return '';
                             }
                         },
-                        // Ocultar línea del eje Y
                         border: {
                             display: false
                         }
@@ -151,10 +150,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             font: {
                                 size: 12
                             },
-                            // Ocultar los labels del eje X ya que ahora están debajo de las barras
                             display: false
                         },
-                        // Ocultar línea del eje X
                         border: {
                             display: false
                         }
@@ -164,7 +161,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     intersect: false,
                     mode: 'index'
                 },
-                // Aumentar el padding inferior para que quepan los valores
                 layout: {
                     padding: {
                         bottom: 40
@@ -179,29 +175,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
         periodBtns.forEach(btn => {
             btn.addEventListener('click', function() {
-                // Remover clase active de todos
-                periodBtns.forEach(b => b.classList.remove('active'));
-                // Agregar clase active al clickeado
-                this.classList.add('active');
+                // Remover clase activo de todos
+                periodBtns.forEach(b => b.classList.remove('activo')); // Cambiado de 'active'
+                // Agregar clase activo al clickeado
+                this.classList.add('activo'); // Cambiado de 'active'
                 
                 // Aquí puedes agregar la lógica para cambiar datos del gráfico
                 // cuando implementes la API para diferentes períodos
+                console.log('Período seleccionado:', this.dataset.periodo);
             });
         });
     }
 
     function inicializarDropdowns() {
-        // Toggle notificaciones
+        // Toggle notificaciones 
         if (notificationsBtn && notificationsDropdown) {
             notificationsBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
-                const isVisible = notificationsDropdown.classList.contains('show');
+                const isVisible = notificationsDropdown.classList.contains('mostrar');
                 
                 // Cerrar otros dropdowns
-                if (userDropdown) userDropdown.classList.remove('show');
+                if (userDropdown) userDropdown.classList.remove('mostrar');
                 
                 // Toggle notificaciones
-                notificationsDropdown.classList.toggle('show', !isVisible);
+                notificationsDropdown.classList.toggle('mostrar', !isVisible);
             });
         }
 
@@ -209,64 +206,79 @@ document.addEventListener('DOMContentLoaded', function() {
         if (userProfile && userDropdown) {
             userProfile.addEventListener('click', function(e) {
                 e.stopPropagation();
-                const isVisible = userDropdown.classList.contains('show');
+                const isVisible = userDropdown.classList.contains('mostrar');
                 
                 // Cerrar otros dropdowns
-                if (notificationsDropdown) notificationsDropdown.classList.remove('show');
+                if (notificationsDropdown) notificationsDropdown.classList.remove('mostrar');
                 
                 // Toggle perfil
-                userDropdown.classList.toggle('show', !isVisible);
+                userDropdown.classList.toggle('mostrar', !isVisible);
             });
         }
 
         // Cerrar dropdowns al hacer clic fuera
         document.addEventListener('click', function() {
             if (notificationsDropdown) {
-                notificationsDropdown.classList.remove('show');
+                notificationsDropdown.classList.remove('mostrar');
             }
             if (userDropdown) {
-                userDropdown.classList.remove('show');
+                userDropdown.classList.remove('mostrar');
             }
         });
 
         // Cerrar dropdowns con tecla ESC
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
-                if (notificationsDropdown) notificationsDropdown.classList.remove('show');
-                if (userDropdown) userDropdown.classList.remove('show');
+                if (notificationsDropdown) notificationsDropdown.classList.remove('mostrar');
+                if (userDropdown) userDropdown.classList.remove('mostrar');
             }
         });
     }
 
     function inicializarSidebar() {
-        // Funcionalidad del botón hamburguesa (solo en móvil)
-        if (hamburgerBtn && sidebar) {
-            hamburgerBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const isActive = sidebar.classList.contains('active');
-                
-                // Alternar sidebar
-                sidebar.classList.toggle('active', !isActive);
-                
-                // Alternar overlay
-                if (overlay) {
-                    overlay.classList.toggle('active', !isActive);
-                }
-                
-                // Alternar ícono hamburguesa
-                this.classList.toggle('active', !isActive);
-                
-                // Prevenir scroll del body cuando sidebar está abierto
-                document.body.style.overflow = !isActive ? 'hidden' : '';
-            });
+        // Verificar que el botón hamburguesa existe
+        if (!hamburgerBtn) {
+            console.error('Botón hamburguesa no encontrado');
+            return;
         }
+
+        if (!sidebar) {
+            console.error('Sidebar no encontrado');
+            return;
+        }
+
+        // Funcionalidad del botón hamburguesa
+        hamburgerBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const isActive = sidebar.classList.contains('activo');
+            
+            console.log('Botón hamburguesa clickeado, estado actual:', isActive);
+            
+            // Alternar sidebar
+            sidebar.classList.toggle('activo', !isActive);
+            
+            // Alternar overlay
+            if (overlay) {
+                overlay.classList.toggle('activo', !isActive);
+                console.log('Overlay toggled:', !isActive);
+            }
+            
+            // Alternar ícono hamburguesa
+            this.classList.toggle('activo', !isActive);
+            
+            // Prevenir scroll del body cuando sidebar está abierto
+            document.body.style.overflow = !isActive ? 'hidden' : '';
+            
+            console.log('Estado final sidebar:', sidebar.classList.contains('activo'));
+        });
 
         // Cerrar sidebar al hacer clic en overlay
         if (overlay) {
             overlay.addEventListener('click', function() {
-                sidebar.classList.remove('active');
-                overlay.classList.remove('active');
-                if (hamburgerBtn) hamburgerBtn.classList.remove('active');
+                console.log('Overlay clickeado, cerrando sidebar');
+                sidebar.classList.remove('activo');
+                overlay.classList.remove('activo');
+                if (hamburgerBtn) hamburgerBtn.classList.remove('activo');
                 document.body.style.overflow = '';
             });
         }
@@ -276,9 +288,9 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
                 if (window.innerWidth <= 768) {
-                    sidebar.classList.remove('active');
-                    if (overlay) overlay.classList.remove('active');
-                    if (hamburgerBtn) hamburgerBtn.classList.remove('active');
+                    sidebar.classList.remove('activo');
+                    if (overlay) overlay.classList.remove('activo');
+                    if (hamburgerBtn) hamburgerBtn.classList.remove('activo');
                     document.body.style.overflow = '';
                 }
             });
@@ -286,10 +298,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Cerrar sidebar con tecla ESC
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && sidebar && sidebar.classList.contains('active')) {
-                sidebar.classList.remove('active');
-                if (overlay) overlay.classList.remove('active');
-                if (hamburgerBtn) hamburgerBtn.classList.remove('active');
+            if (e.key === 'Escape' && sidebar && sidebar.classList.contains('activo')) {
+                sidebar.classList.remove('activo');
+                if (overlay) overlay.classList.remove('activo');
+                if (hamburgerBtn) hamburgerBtn.classList.remove('activo');
                 document.body.style.overflow = '';
             }
         });
@@ -298,10 +310,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cerrar sidebar al cambiar tamaño de ventana (si se vuelve desktop)
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768 && sidebar) {
-            sidebar.classList.remove('active');
-            if (overlay) overlay.classList.remove('active');
-            if (hamburgerBtn) hamburgerBtn.classList.remove('active');
+            sidebar.classList.remove('activo');
+            if (overlay) overlay.classList.remove('activo');
+            if (hamburgerBtn) hamburgerBtn.classList.remove('activo');
             document.body.style.overflow = '';
         }
+    });
+
+    // Depuración: Verificar que elementos existen
+    console.log('Elementos cargados:', {
+        hamburgerBtn: !!hamburgerBtn,
+        sidebar: !!sidebar,
+        overlay: !!overlay,
+        notificationsBtn: !!notificationsBtn,
+        userProfile: !!userProfile
     });
 });
