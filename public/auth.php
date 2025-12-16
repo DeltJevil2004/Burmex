@@ -24,11 +24,11 @@ if (empty($email) || empty($contrasena)) {
 }
 
 try {
-    // Buscar usuario en la base de datos (usando contrasena_plano)
+    // Buscar usuario en la base de datos (usando password)
     $stmt = $conn->prepare("
         SELECT * FROM usuarios 
         WHERE email = ? 
-        AND contrasena_plano = ?
+        AND password = ?
         AND activo = 1
     ");
     $stmt->execute([$email, $contrasena]);

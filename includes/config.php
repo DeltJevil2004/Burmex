@@ -1,15 +1,11 @@
 <?php
-// includes/config.php - VERSIÓN SIN HASH
-
-// ============================================
 // CONFIGURACIÓN BÁSICA
-// ============================================
+
 define('ENVIRONMENT', 'development');
 date_default_timezone_set('America/Mexico_City');
 
-// ============================================
-// CONFIGURACIÓN SESIÓN (SOLO UNA VEZ)
-// ============================================
+// CONFIGURACIÓN SESIÓN 
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start([
         'cookie_httponly' => true,
@@ -18,9 +14,9 @@ if (session_status() === PHP_SESSION_NONE) {
     ]);
 }
 
-// ============================================
+
 // CONFIGURACIÓN DE BASE DE DATOS
-// ============================================
+
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'burmex');
 define('DB_USER', 'root');
@@ -41,9 +37,9 @@ try {
     die("Error de conexión: " . $e->getMessage());
 }
 
-// ============================================
+
 // FUNCIONES BÁSICAS
-// ============================================
+
 function sanitize($input) {
     return htmlspecialchars(trim($input), ENT_QUOTES, 'UTF-8');
 }
@@ -60,19 +56,17 @@ function requireAdmin() {
     }
 }
 
-// ============================================
-// FUNCIONES PARA CONTRASEÑAS (VERSIÓN SIN HASH)
-// ============================================
 
+// FUNCIONES PARA CONTRASEÑAS 
 /**
- * Cambiar contraseña de un usuario (versión sin hash)
+ * Cambiar contraseña de un usuario 
  * Solo para admin/gerente cambiando contraseñas de otros
  */
 function cambiarPasswordUsuario($usuario_id, $nueva_password) {
     global $conn;
     
     try {
-        $stmt = $conn->prepare("UPDATE usuarios SET contrasena_plano = ? WHERE id_usuario = ?");
+        $stmt = $conn->prepare("UPDATE usuarios SET password = ? WHERE id_usuario = ?");
         return $stmt->execute([$nueva_password, $usuario_id]);
     } catch (PDOException $e) {
         error_log("Error al cambiar password: " . $e->getMessage());
@@ -107,7 +101,7 @@ function puedeCambiarPassword($usuario_actual_id, $usuario_a_cambiar_id) {
         // Gerente solo puede cambiar a empleados
         if ($rol_actual === 'gerente' && $rol_a_cambiar === 'empleado') return true;
         
-        // Usuario solo puede cambiar su propia contraseña (no implementado aquí)
+        // Usuario solo puede cambiar su propia contraseña
         return false;
         
     } catch (PDOException $e) {

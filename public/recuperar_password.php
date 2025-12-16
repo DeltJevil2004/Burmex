@@ -80,31 +80,31 @@ if (isset($_GET['token'])) {
             $etapa = 'solicitud';
         } else {
             // Token válido, mostrar formulario de cambio
-            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cambiar'])) {
-                $nueva_password = $_POST['nueva_password'] ?? '';
-                $confirmar_password = $_POST['confirmar_password'] ?? '';
-                
-                if (empty($nueva_password) || empty($confirmar_password)) {
-                    $error = 'Completa ambos campos';
-                } elseif ($nueva_password !== $confirmar_password) {
-                    $error = 'Las contraseñas no coinciden';
-                } elseif (strlen($nueva_password) < 6) {
-                    $error = 'La contraseña debe tener al menos 6 caracteres';
-                } else {
-                    // Cambiar contraseña (en texto plano)
-                    $stmt = $conn->prepare("
-                        UPDATE usuarios 
-                        SET contrasena_plano = ?, 
-                            reset_token = NULL, 
-                            reset_token_expira = NULL 
-                        WHERE id_usuario = ?
-                    ");
-                    $stmt->execute([$nueva_password, $usuario['id_usuario']]);
-                    
-                    $mensaje = 'Contraseña cambiada exitosamente. Ahora puedes iniciar sesión.';
-                    $etapa = 'completado';
-                }
-            }
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cambiar'])) {
+            $nueva_password = $_POST['nueva_password'] ?? '';
+            $confirmar_password = $_POST['confirmar_password'] ?? '';
+    
+        if (empty($nueva_password) || empty($confirmar_password)) {
+        $error = 'Completa ambos campos';
+         } elseif ($nueva_password !== $confirmar_password) {
+        $error = 'Las contraseñas no coinciden';
+         } elseif (strlen($nueva_password) < 6) {
+        $error = 'La contraseña debe tener al menos 6 caracteres';
+        } else {
+        // Cambiar contraseña 
+        $stmt = $conn->prepare("
+            UPDATE usuarios 
+            SET password = ?, 
+                reset_token = NULL, 
+                reset_token_expira = NULL 
+            WHERE id_usuario = ?
+        ");
+        $stmt->execute([$nueva_password, $usuario['id_usuario']]);
+        
+        $mensaje = 'Contraseña cambiada exitosamente. Ahora puedes iniciar sesión.';
+        $etapa = 'completado';
+    }
+}
         }
     } catch (PDOException $e) {
         error_log("Error validando token: " . $e->getMessage());

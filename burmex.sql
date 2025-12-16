@@ -1,4 +1,4 @@
--- Crear base de datos si no existe
+-- Crear base de datos 
 CREATE DATABASE burmex;
 USE burmex;
 
@@ -44,11 +44,11 @@ CREATE TABLE categorias (
     INDEX idx_categoria_orden (orden)
 );
 
--- 4. Usuarios (sin contrasena_hash)
+-- 4. Usuarios 
 CREATE TABLE usuarios (
     id_usuario INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(150) NOT NULL UNIQUE,
-    contrasena_plano VARCHAR(50) NULL,
+    password VARCHAR(255) NOT NULL, 
     nombre VARCHAR(100) NOT NULL,
     apellido VARCHAR(100) NOT NULL,
     rol ENUM('empleado', 'gerente', 'admin') DEFAULT 'empleado',
@@ -176,5 +176,5 @@ CREATE TABLE password_changes_admin (
 );
 
 -- Insertar usuario admin
-INSERT INTO usuarios (email, contrasena_plano, nombre, apellido, rol, activo) 
-VALUES ('admin@burmex.com', 'password', 'Administrador', 'Principal', 'admin', 1);
+INSERT INTO usuarios (email, password, nombre, apellido, rol, activo) 
+VALUES ('admin@burmex.com', 'admin123', 'Administrador', 'Principal', 'admin', 1);
