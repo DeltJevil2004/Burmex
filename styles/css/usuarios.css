@@ -1,5 +1,3 @@
-/* USUARIOS - CSS LIMPIO */
-
 /* Encabezado */
 .encabezado-usuarios {
     display: flex;
@@ -302,11 +300,13 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     flex-wrap: wrap;
     gap: 1rem;
+    border: 1px solid #e9ecef;
 }
 
 .info-paginacion {
     font-size: 0.9rem;
     color: #666;
+    font-weight: 500;
 }
 
 .controles-paginacion {
@@ -328,30 +328,135 @@
     font-size: 0.9rem;
     transition: all 0.2s;
     border: 1px solid #dee2e6;
+    box-sizing: border-box;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 .pagina-btn:hover {
     background: #e9ecef;
     border-color: #ced4da;
+    transform: translateY(-1px);
+}
+
+.pagina-btn:active {
+    transform: translateY(0);
 }
 
 .pagina-btn.activa {
     background: #009BDB;
     color: white;
     border-color: #009BDB;
-    font-weight: 500;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 155, 219, 0.2);
 }
 
 .pagina-btn.primera,
 .pagina-btn.ultima {
     background: #e9ecef;
     color: #6c757d;
+    min-width: 70px;
+    font-size: 0.85rem;
 }
 
 .pagina-btn.anterior,
 .pagina-btn.siguiente {
     background: #f8f9fa;
     color: #495057;
+    min-width: 90px;
+    font-size: 0.85rem;
+    gap: 4px;
+}
+
+.pagina-btn.primera:hover,
+.pagina-btn.ultima:hover,
+.pagina-btn.anterior:hover,
+.pagina-btn.siguiente:hover {
+    background: #dee2e6;
+    border-color: #adb5bd;
+}
+
+.pagina-btn.deshabilitada {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #f8f9fa;
+    color: #adb5bd;
+}
+
+.pagina-btn.deshabilitada:hover {
+    background: #f8f9fa;
+    border-color: #dee2e6;
+    transform: none;
+}
+
+/* Responsive para paginación */
+@media (max-width: 768px) {
+    .paginacion {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 0.75rem;
+        padding: 0.75rem;
+    }
+    
+    .info-paginacion {
+        order: 2;
+        margin-top: 0.5rem;
+    }
+    
+    .controles-paginacion {
+        justify-content: center;
+        order: 1;
+    }
+    
+    .pagina-btn.primera,
+    .pagina-btn.ultima,
+    .pagina-btn.anterior,
+    .pagina-btn.siguiente {
+        min-width: 60px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .paginacion {
+        padding: 0.5rem;
+    }
+    
+    .pagina-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+    }
+    
+    .pagina-btn.primera,
+    .pagina-btn.ultima {
+        min-width: 50px;
+        font-size: 0.75rem;
+    }
+    
+    .pagina-btn.anterior,
+    .pagina-btn.siguiente {
+        min-width: 70px;
+        font-size: 0.75rem;
+    }
+    
+    .controles-paginacion {
+        gap: 0.15rem;
+    }
+}
+
+/* Para pantallas muy pequeñas, ocultar algunos botones */
+@media (max-width: 380px) {
+    .pagina-btn.primera,
+    .pagina-btn.ultima {
+        display: none;
+    }
+    
+    .pagina-btn.anterior,
+    .pagina-btn.siguiente {
+        min-width: 60px;
+    }
 }
 
 /* Alertas */

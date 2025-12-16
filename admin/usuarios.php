@@ -1,5 +1,4 @@
 <?php
-// admin/usuarios.php
 session_start();
 
 // Verificar si usuario está logueado
@@ -517,50 +516,70 @@ if (isset($_GET['success'])) {
                 </table>
             </div>
 
-            <!-- Paginación -->
-            <?php if ($total_paginas > 1): ?>
-            <div class="paginacion">
-                <div class="info-paginacion">
-                    Página <?php echo $pagina_actual; ?> de <?php echo $total_paginas; ?>
-                </div>
-                <div class="controles-paginacion">
-                    <?php if ($pagina_actual > 1): ?>
-                        <a href="usuarios.php?pagina=1<?php echo $rol_filtro !== 'todos' ? '&rol=' . $rol_filtro : ''; ?>" class="pagina-btn primera">
-                            <i class="fas fa-angle-double-left"></i>
-                        </a>
-                        <a href="usuarios.php?pagina=<?php echo $pagina_actual - 1; ?><?php echo $rol_filtro !== 'todos' ? '&rol=' . $rol_filtro : ''; ?>" class="pagina-btn anterior">
-                            <i class="fas fa-angle-left"></i>
-                        </a>
-                    <?php endif; ?>
-                    
-                    <?php 
-                    $paginas_a_mostrar = 5;
-                    $inicio = max(1, $pagina_actual - floor($paginas_a_mostrar / 2));
-                    $fin = min($total_paginas, $inicio + $paginas_a_mostrar - 1);
-                    
-                    if ($fin - $inicio < $paginas_a_mostrar - 1) {
-                        $inicio = max(1, $fin - $paginas_a_mostrar + 1);
-                    }
-                    
-                    for ($i = $inicio; $i <= $fin; $i++):
-                    ?>
-                        <a href="usuarios.php?pagina=<?php echo $i; ?><?php echo $rol_filtro !== 'todos' ? '&rol=' . $rol_filtro : ''; ?>" 
-                           class="pagina-btn <?php echo ($i == $pagina_actual) ? 'activa' : ''; ?>">
-                            <?php echo $i; ?>
-                        </a>
-                    <?php endfor; ?>
-                    
-                    <?php if ($pagina_actual < $total_paginas): ?>
-                        <a href="usuarios.php?pagina=<?php echo $pagina_actual + 1; ?><?php echo $rol_filtro !== 'todos' ? '&rol=' . $rol_filtro : ''; ?>" class="pagina-btn siguiente">
-                            <i class="fas fa-angle-right"></i>
-                        </a>
-                        <a href="usuarios.php?pagina=<?php echo $total_paginas; ?><?php echo $rol_filtro !== 'todos' ? '&rol=' . $rol_filtro : ''; ?>" class="pagina-btn ultima">
-                            <i class="fas fa-angle-double-right"></i>
-                        </a>
-                    <?php endif; ?>
-                </div>
-            </div>
+<!-- Paginación -->
+<?php if ($total_paginas > 1): ?>
+    <div class="paginacion">
+        <div class="info-paginacion">
+            Mostrando <?php echo (($pagina_actual - 1) * $usuarios_por_pagina) + 1; ?> - 
+            <?php 
+                $hasta = min($pagina_actual * $usuarios_por_pagina, $total_usuarios);
+                echo $hasta;
+            ?> 
+            de <?php echo $total_usuarios; ?> usuarios
+        </div>
+        
+        <div class="controles-paginacion">
+            <?php if ($pagina_actual > 1): ?>
+                <a href="usuarios.php?pagina=1<?php echo $rol_filtro !== 'todos' ? '&rol=' . $rol_filtro : ''; ?>" 
+                   class="pagina-btn primera" title="Primera página">
+                    « Primera
+                </a>
+                <a href="usuarios.php?pagina=<?php echo $pagina_actual - 1; ?><?php echo $rol_filtro !== 'todos' ? '&rol=' . $rol_filtro : ''; ?>" 
+                   class="pagina-btn anterior" title="Página anterior">
+                    ‹ Anterior
+                </a>
+            <?php else: ?>
+                <span class="pagina-btn primera deshabilitada" title="Primera página">« Primera</span>
+                <span class="pagina-btn anterior deshabilitada" title="Página anterior">‹ Anterior</span>
             <?php endif; ?>
+            
+            <?php
+            $inicio = max(1, $pagina_actual - 2);
+            $fin = min($total_paginas, $pagina_actual + 2);
+            
+            for ($i = $inicio; $i <= $fin; $i++):
+                if ($i == 1 || $i == $total_paginas || ($i >= $pagina_actual - 1 && $i <= $pagina_actual + 1)):
+            ?>
+                <a href="usuarios.php?pagina=<?php echo $i; ?><?php echo $rol_filtro !== 'todos' ? '&rol=' . $rol_filtro : ''; ?>"
+                   class="pagina-btn <?php echo $i == $pagina_actual ? 'activa' : ''; ?>"
+                   title="Página <?php echo $i; ?>">
+                    <?php echo $i; ?>
+                </a>
+            <?php 
+                elseif ($i == $pagina_actual - 2 || $i == $pagina_actual + 2):
+            ?>
+                <span class="pagina-btn deshabilitada">...</span>
+            <?php
+                endif;
+            endfor;
+            ?>
+            
+            <?php if ($pagina_actual < $total_paginas): ?>
+                <a href="usuarios.php?pagina=<?php echo $pagina_actual + 1; ?><?php echo $rol_filtro !== 'todos' ? '&rol=' . $rol_filtro : ''; ?>" 
+                   class="pagina-btn siguiente" title="Página siguiente">
+                    Siguiente ›
+                </a>
+                <a href="usuarios.php?pagina=<?php echo $total_paginas; ?><?php echo $rol_filtro !== 'todos' ? '&rol=' . $rol_filtro : ''; ?>" 
+                   class="pagina-btn ultima" title="Última página">
+                    Última »
+                </a>
+            <?php else: ?>
+                <span class="pagina-btn siguiente deshabilitada" title="Página siguiente">Siguiente ›</span>
+                <span class="pagina-btn ultima deshabilitada" title="Última página">Última »</span>
+            <?php endif; ?>
+        </div>
+    </div>
+<?php endif; ?>
         </div>
     </main>
 

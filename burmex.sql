@@ -178,3 +178,13 @@ CREATE TABLE password_changes_admin (
 -- Insertar usuario admin
 INSERT INTO usuarios (email, password, nombre, apellido, rol, activo) 
 VALUES ('admin@burmex.com', 'admin123', 'Administrador', 'Principal', 'admin', 1);
+
+-- Insertar categorías básicas
+INSERT INTO categorias (nombre_categoria, destacada, orden) VALUES
+('Laptops', TRUE, 1),
+('PC de Escritorio', TRUE, 2),
+('Gaming', TRUE, 3),
+('Servidores', FALSE, 4),
+('Punto de Venta', FALSE, 5),
+('Componentes', FALSE, 6),
+('Accesorios', FALSE, 7);
