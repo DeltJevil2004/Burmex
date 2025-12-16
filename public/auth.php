@@ -1,5 +1,4 @@
 <?php
-// public/auth.php - VERSIÓN SIN HASH
 require_once '../includes/config.php';
 
 // INICIAR SESIÓN
@@ -24,7 +23,7 @@ if (empty($email) || empty($contrasena)) {
 }
 
 try {
-    // Buscar usuario en la base de datos (usando password)
+    // Buscar usuario en la base de datos 
     $stmt = $conn->prepare("
         SELECT * FROM usuarios 
         WHERE email = ? 
