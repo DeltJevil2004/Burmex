@@ -409,10 +409,7 @@
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.tarjeta-marca:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-}
+
 
 /* Header de tarjeta */
 .marca-header {
@@ -429,7 +426,6 @@
     height: 80px;
     border-radius: 8px;
     overflow: hidden;
-    background: white;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     display: flex;
     align-items: center;
@@ -480,20 +476,11 @@
     color: #0d6efd;
 }
 
-.btn-editar:hover {
-    background: #0d6efd;
-    color: white;
-}
-
 .btn-eliminar {
     background: #ffeaea;
     color: #dc3545;
 }
 
-.btn-eliminar:hover {
-    background: #dc3545;
-    color: white;
-}
 
 /* Contenido de tarjeta */
 .marca-contenido {
@@ -530,11 +517,6 @@
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.2s;
-}
-
-.marca-sitio-web:hover {
-    color: #0077cc;
-    text-decoration: underline;
 }
 
 .marca-sitio-web i {
@@ -647,11 +629,7 @@
     cursor: pointer;
 }
 
-.pagina-btn:hover {
-    background: #e9ecef;
-    border-color: #ced4da;
-    transform: translateY(-1px);
-}
+ 
 
 .pagina-btn:active {
     transform: translateY(0);
@@ -682,13 +660,7 @@
     gap: 4px;
 }
 
-.pagina-btn.primera:hover,
-.pagina-btn.ultima:hover,
-.pagina-btn.anterior:hover,
-.pagina-btn.siguiente:hover {
-    background: #dee2e6;
-    border-color: #adb5bd;
-}
+
 
 .pagina-btn.deshabilitada {
     opacity: 0.5;
@@ -697,13 +669,9 @@
     color: #adb5bd;
 }
 
-.pagina-btn.deshabilitada:hover {
-    background: #f8f9fa;
-    border-color: #dee2e6;
-    transform: none;
-}
 
-/* ========== RESPONSIVE DESIGN ========== */
+
+/*  RESPONSIVE DESIGN  */
 
 /* Tablet (1024px) */
 @media (max-width: 1024px) {

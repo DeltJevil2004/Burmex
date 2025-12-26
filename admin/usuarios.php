@@ -61,7 +61,6 @@ try {
     $total_paginas = 1;
 }
 
-// PROCESAR FORMULARIOS
 
 // Crear nuevo usuario
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['crear'])) {

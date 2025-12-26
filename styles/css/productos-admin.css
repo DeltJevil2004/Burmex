@@ -457,7 +457,7 @@
     cursor: pointer;
 }
 
-.pagina-btn:hover {
+.pagina-btn {
     background: #e9ecef;
     border-color: #ced4da;
     transform: translateY(-1px);
@@ -492,10 +492,10 @@
     gap: 4px;
 }
 
-.pagina-btn.primera:hover,
-.pagina-btn.ultima:hover,
-.pagina-btn.anterior:hover,
-.pagina-btn.siguiente:hover {
+.pagina-btn.primera,
+.pagina-btn.ultima,
+.pagina-btn.anterior,
+.pagina-btn.siguiente {
     background: #dee2e6;
     border-color: #adb5bd;
 }
@@ -507,7 +507,7 @@
     color: #adb5bd;
 }
 
-.pagina-btn.deshabilitada:hover {
+.pagina-btn.deshabilitada {
     background: #f8f9fa;
     border-color: #dee2e6;
     transform: none;
